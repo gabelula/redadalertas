@@ -50,6 +50,12 @@ export default class RaidMap extends TrackerReact(React.Component) {
     console.log('onClick', e);
   }
 
+	errorImage() {
+		return (
+			<img src="/loading.png" />
+		);
+	}
+
 	render() {
 
 		return (
@@ -59,7 +65,7 @@ export default class RaidMap extends TrackerReact(React.Component) {
         lat={coords.lat}
         lng={coords.lng}
         zoom={4}
-        loadingMessage={'No hay que cooperar con este sistema que nos oprime. El mapa no se pudo iniciar.'}
+        loadingMessage={this.errorImage()}
         params={{
 					v: '3.exp',
 					key: 'AIzaSyAME4t3G4A-annYQdxTHTMYjBw8ZURl5xA'
