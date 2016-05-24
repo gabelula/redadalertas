@@ -59,7 +59,7 @@ export default class RaidMap extends TrackerReact(React.Component) {
         lat={coords.lat}
         lng={coords.lng}
         zoom={4}
-        loadingMessage={'Resist.'}
+        loadingMessage={'No hay que cooperar con este sistema que nos oprime. El mapa no se pudo iniciar.'}
         params={{
 					v: '3.exp',
 					key: 'AIzaSyAME4t3G4A-annYQdxTHTMYjBw8ZURl5xA'
