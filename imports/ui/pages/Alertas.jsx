@@ -9,6 +9,8 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import AlertStatus from '../components/AlertStatus.jsx';
 
+import { updateAlert } from '../../api/users/methods.js';
+
 const styles = {
   block: {
     maxWidth: 250,
@@ -27,10 +29,10 @@ export default class Alertas extends TrackerReact(Component) {
 	    super(props);
 
 	    this.state = {
-				getsAlerts: false,
 				subscription: {
-
-				}
+					userData: Meteor.subscribe('userData')
+				},
+				getsAlerts: false
 	    };
 	}
 
@@ -39,14 +41,20 @@ export default class Alertas extends TrackerReact(Component) {
 	}
 
 	componentWillUnmount() {
-
+		this.state.subscription.userData.stop();
   }
 
 	handleAlertChange() {
-		this.state.getsAlerts = !this.state.getsAlerts;
+		//this.state.getsAlerts = !this.state.getsAlerts;
 		//this.setState({getsAlerts: !this.state.getsAlerts});
-		console.log(this.state.getsAlerts);
-		Meteor.user().profile.getsAlerts = this.state.getsAlerts;
+		//Meteor.user().getsAlerts = !this.state.getsAlerts;
+		//console.log('In Alertas.jsx: ' + Meteor.user().getsAlerts);
+		updateAlert.call(!this.state.getsAlerts, (err) => {
+			if (err && err.error) {
+				return err.error;
+			}
+			console.log('Submission was a success: ');
+		});
 	}
 
 
@@ -68,7 +76,7 @@ export default class Alertas extends TrackerReact(Component) {
 						labelPosition="right"
 						style={styles.toggle}
 						id="alert-status"
-						defaultToggled={false}
+						defaultToggled={Meteor.user().getsAlerts}
 						onToggle={this.handleAlertChange.bind(this)} />
 					<br />
 					<TextField hintText="Tu numero celular" id="cel-number" />

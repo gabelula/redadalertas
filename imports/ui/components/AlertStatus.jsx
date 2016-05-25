@@ -11,17 +11,29 @@ export default class AlertStatus extends TrackerReact(Component) {
 	    super(props);
 
 	    this.state = {
-				getsAlerts: props.getsAlerts
+				subscription: {
+					userData: Meteor.subscribe('userData')
+				},
+				getsAlerts: Meteor.user().getsAlerts
 			};
+	}
+
+	componentWillUnmount() {
+		this.state.subscription.userData.stop();
 	}
 
 
 	render() {
-		console.log('Rendered AlertStatus: ' + this.state.AlertStatus);
+		console.log('Rendered AlertStatus: ' + Meteor.user().getsAlerts);
+
+		var showAlerts = Meteor.user().getsAlerts;
+
+		var self = this;
+
 		return (
 				<div>
 					<h4>
-						{this.state.getsAlerts ?
+						{showAlerts ?
 							<p>Alerts On</p>
 						:
 							<p>Alerts Off</p>
