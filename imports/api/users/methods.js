@@ -21,3 +21,27 @@ export const updateAlert = new ValidatedMethod({
 				console.log(this.userId);
     }
 });
+
+export const loginUser = new ValidatedMethod({
+	name: 'user.Login',
+	validate: new SimpleSchema({
+		username: { type: String },
+		password: { type: String }
+	}).validator(),
+	run({ username, password }) {
+		if ( this.userId ) {
+			throw new Meteor.Error('Ya esta autenticado con la aplicacion.');
+		}
+
+		const loginData = { username, password };
+
+		Meteor.loginWithPassword(username, password, function(err, res){
+			if(err){
+				console.log(err);
+			} else {
+				console.log(res);
+
+			}
+		});
+	}
+});

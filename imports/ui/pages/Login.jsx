@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import { loginUser } from '../../api/users/methods.js';
 
 
 const style = {
@@ -32,13 +33,24 @@ export default class Login extends TrackerReact(React.Component) {
 		var user = document.getElementById("signup-email").value;
 		var password = document.getElementById("signup-pw").value;
 
-		Meteor.loginWithPassword(user, password, function(err, res){
-			if(err){
-				console.log(err);
-			} else {
-				console.log(res);
+		// Meteor.loginWithPassword(user, password, function(err, res){
+		// 	if(err){
+		// 		console.log(err);
+		// 	} else {
+		// 		console.log(res);
+		//
+		// 	}
+		// });
 
+		loginUser.call({
+			username: user,
+			password: password
+		}, (err) => {
+			if (err && err.error) {
+				console.log('Login failed...');
+				return err.error;
 			}
+			console.log('Login was a success!');
 		});
 
 	}

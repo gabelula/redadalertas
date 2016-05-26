@@ -6,8 +6,11 @@ import { Meteor } from 'meteor/meteor';
 import AccountsUIWrapper from '../AccountsUIWrapper.jsx';
 import Toggle from 'material-ui/Toggle';
 import TextField from 'material-ui/TextField';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
 import AlertStatus from '../components/AlertStatus.jsx';
+import Snackbar from 'material-ui/Snackbar';
 
 import { updateAlert } from '../../api/users/methods.js';
 
@@ -32,7 +35,9 @@ export default class Alertas extends TrackerReact(Component) {
 				subscription: {
 					userData: Meteor.subscribe('userData')
 				},
-				getsAlerts: false
+				getsAlerts: false,
+				mobileCarrier: 1,
+				open: false
 	    };
 	}
 
@@ -57,6 +62,21 @@ export default class Alertas extends TrackerReact(Component) {
 		});
 	}
 
+	selectMobileCarrier() {
+
+	}
+
+	saveAlertInfo(e) {
+		this.setState({
+      open: true,
+    });
+	}
+
+	handleRequestClose() {
+		this.setState({
+      open: false,
+    });
+	}
 
 	render() {
 
@@ -81,12 +101,25 @@ export default class Alertas extends TrackerReact(Component) {
 					<br />
 					<TextField hintText="Tu numero celular" id="cel-number" />
 					<br />
-					<RaisedButton type="submit" className="report-submit" label="Inscribir a Alertas" primary={true} style={styles.button} />
+					<SelectField value={this.state.mobileCarrier} onChange={this.selectMobileCarrier} >
+						<MenuItem value={1} primaryText="Never" />
+	          <MenuItem value={2} primaryText="Every Night" />
+	          <MenuItem value={3} primaryText="Weeknights" />
+	          <MenuItem value={4} primaryText="Weekends" />
+	          <MenuItem value={5} primaryText="Weekly" />
+					</SelectField>
+					<br />
+					<RaisedButton onClick={this.saveAlertInfo.bind(this)} type="submit" className="report-submit" label="Inscribir a Alertas" primary={true} style={styles.button} />
 					</span>
 					:
 					<AccountsUIWrapper />
 				}
 
+				<Snackbar
+							open={this.state.open}
+							message="Tu informacion de Alertas ha sido grabado."
+							autoHideDuration={4000}
+							onRequestClose={this.handleRequestClose.bind(this)} />
 
 			</div>
 		)
