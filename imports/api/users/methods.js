@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema'
-import { ValidatedMethod } from 'meteor/mdg:validated-method'
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
 
 
 export const updateAlert = new ValidatedMethod({
@@ -17,7 +17,7 @@ export const updateAlert = new ValidatedMethod({
         const newAlert = getsAlerts;
 
         Meteor.user().update(newAlert);
-				Meteor.users.update(this.userId, {$set: {"getsAlerts": newAlert}});
+				Meteor.users.update(this.userId, {$set: {"alerts.getsAlerts": newAlert}});
 				console.log(this.userId);
     }
 });

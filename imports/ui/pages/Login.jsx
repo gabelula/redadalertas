@@ -6,6 +6,7 @@ import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { loginUser } from '../../api/users/methods.js';
+import { Accounts } from 'meteor/accounts-base';
 
 
 const style = {
@@ -19,7 +20,9 @@ export default class Login extends TrackerReact(React.Component) {
 	    super(props);
 
 	    this.state = {
-
+				subscription: {
+					userData: Meteor.subscribe('userData')
+				}
 	    };
 	}
 
@@ -55,10 +58,17 @@ export default class Login extends TrackerReact(React.Component) {
 
 	}
 
+	handleRegister(e) {
+		e.preventDefault();
+
+		console.log('Registering...');
+	}
+
 	render() {
 
 		return (
 				<div>
+					<h3>Ingresa</h3>
 					<form onSubmit={this.handleLogin}>
 						<TextField hintText="Correo Electronico" id="signup-email" />
 						<TextField hintText="Contrasena" id="signup-pw" type="password" />
@@ -66,10 +76,12 @@ export default class Login extends TrackerReact(React.Component) {
 						<RaisedButton type="submit" className="login-submit" label="Ingresa" primary={true} style={style} />
 					</form>
 
-					<form onSubmit={this.handleRegister}>
-						<TextField hintText="Correo Electronico" id="reg-email" />
-						<TextField hintText="Contrasena" id="reg-pw" type="password" />
-						<TextField hintText="Confirma Contrasena" id="reg-pw-2" type="password" />
+					<hr />
+					<h3>Crear una cuenta nueva</h3>
+					<form onSubmit={this.handleRegister.bind(this)}>
+						<TextField type="text" hintText="Correo Electronico" id="reg-email" />
+						<TextField type="password" hintText="Contrasena" id="reg-pw" />
+						<TextField type="password" hintText="Confirma Contrasena" id="reg-pw-2" />
 
 						<RaisedButton type="submit" className="register-submit" label="Registrame" primary={true} style={style} />
 					</form>
