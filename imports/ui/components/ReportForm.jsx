@@ -8,6 +8,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 import { Raids } from '../../api/raids/raids.js';
 import { addRaid } from '../../api/raids/methods.js';
+import check from 'meteor/check';
 
 const style = {
   margin: 12,
@@ -32,14 +33,17 @@ export default class ReportForm extends TrackerReact(Component) {
 		e.preventDefault();
 
 		const geocoder = new google.maps.Geocoder();
-    	const address = document.getElementById("txtAddress").value;
+
+    const address = document.getElementById("txtAddress").value;
+		//check (address, String);
 		const description = document.getElementById("txtDescription").value;
+		//check (description, String);
 
 		geocoder.geocode({ 'address': address }, function (results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
 				const latitude = results[0].geometry.location.lat();
 				const longitude = results[0].geometry.location.lng();
-				
+
 				addRaid.call({
 					address,
 					description,
@@ -50,7 +54,7 @@ export default class ReportForm extends TrackerReact(Component) {
 					if (err && err.error) {
 						return err.error;
 					}
-					// console.log('Submission was a success: ' + data);		
+					// console.log('Submission was a success: ' + data);
 				});
 			} else {
 				alert("Request failed. Could not GeoCode the location based on your input. Try submitting a Zip Code");
@@ -58,8 +62,8 @@ export default class ReportForm extends TrackerReact(Component) {
 		});
 
 		// Clear values
-		document.getElementById("txtAddress").value = 'Direccion o Codigo Postal';
-		document.getElementById("txtDescription").value = 'Describe la redada';
+		document.getElementById("txtAddress").value = '';
+		document.getElementById("txtDescription").value = '';
 
 	}
 
@@ -72,9 +76,9 @@ export default class ReportForm extends TrackerReact(Component) {
 			<div>
 				<form onSubmit={this.insertRaid}>
 					<TextField hintText="Describe la redada" id="txtDescription" />
-					<TextField hintText="Direccion o Codigo Postal" id="txtAddress" />
+					<TextField hintText="Codigo Postal" id="txtAddress" />
 
-					<RaisedButton type="submit" className="report-submit" label="Reporta" primary={true} style={style} />
+					<RaisedButton type="submit" className="report-submit" label="Reporta" backgroundColor="rgb(121, 9, 9)" labelColor="#ffffff" style={style} />
 				</form>
 
 

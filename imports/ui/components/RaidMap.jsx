@@ -30,7 +30,7 @@ export default class RaidMap extends TrackerReact(React.Component) {
 
 	onMapCreated(map) {
 	    map.setOptions({
-	      disableDefaultUI: true
+	      disableDefaultUI: false
 	    });
 	}
 
