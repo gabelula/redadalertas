@@ -15,7 +15,7 @@ Raids.deny({
 	}
 })
 
-const raidSchema = new SimpleSchema({
+export const raidSchema = new SimpleSchema({
   address: { type: String, regEx: SimpleSchema.RegEx.ZipCode },
 	description: { type: String },
 	createdOn: { type: Date },

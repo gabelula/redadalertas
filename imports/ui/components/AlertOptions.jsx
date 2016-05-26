@@ -36,7 +36,7 @@ export default class AlertOptions extends TrackerReact(Component) {
 				subscription: {
 					userData: Meteor.subscribe('userData')
 				},
-				//getsAlerts: false ,
+				getsAlerts: false ,
 				mobileCarrier: 1,
 				open: false,
 				dataSource: [
@@ -47,15 +47,9 @@ export default class AlertOptions extends TrackerReact(Component) {
 					'Verizon',
 					'T-Mobile',
 					'Cricket'
-				]
+				],
+				thisUser: Meteor.user()
 	    };
-	}
-
-	componentDidMount() {
-		//ReactDOM.render(<LogInButtonsDialog />, document.getElementById('login'));
-		// this.state.getsAlerts = thisUser.alerts.getsAlerts;
-		// this.state.isAdmin = thisUser.isAdmin;
-		// this.state.mobileCarrier = thisUser.alerts.mobileCarrier
 	}
 
 	componentWillUnmount() {
@@ -63,17 +57,15 @@ export default class AlertOptions extends TrackerReact(Component) {
   }
 
 	handleAlertChange() {
-		//this.state.getsAlerts = !this.state.getsAlerts;
 		this.setState({getsAlerts: !this.state.getsAlerts});
-		//Meteor.user().getsAlerts = !this.state.getsAlerts;
-		//console.log('In Alertas.jsx: ' + Meteor.user().getsAlerts);
-		updateAlert.call(true, (err) => {
-			if (err && err.error) {
-				return err.error;
-			}else{
-				console.log('Submission was a success: ');
-			}
-		});
+		//
+		// updateAlert.call(true, (err) => {
+		// 	if (err && err.error) {
+		// 		return err.error;
+		// 	}else{
+		// 		console.log('Submission was a success: ');
+		// 	}
+		// });
 	}
 
 	handleUpdateInput (value) {
@@ -87,6 +79,9 @@ export default class AlertOptions extends TrackerReact(Component) {
 	}
 
 	saveAlertInfo(e) {
+		Meteor.users.update(Meteor.userId(), {$set: {"alerts.getsAlerts": this.state.getsAlerts}});
+
+
 		this.setState({
       open: true,
     });
@@ -99,9 +94,8 @@ export default class AlertOptions extends TrackerReact(Component) {
 	}
 
 	render() {
+		console.log(this.state.getsAlerts);
 
-		let self = this;
-		console.log(Meteor.user());
 		return (
 			<div>
 
@@ -110,7 +104,7 @@ export default class AlertOptions extends TrackerReact(Component) {
 							labelPosition="right"
 							style={styles.toggle}
 							id="alert-status"
-							defaultToggled={Meteor.user().getsAlerts}
+							defaultToggled={this.state.getsAlerts}
 							onToggle={this.handleAlertChange.bind(this)} />
 						<br />
 						<TextField hintText="Tu numero celular" id="cel-number" />

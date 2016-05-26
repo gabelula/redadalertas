@@ -16,7 +16,7 @@ export const updateAlert = new ValidatedMethod({
 
         const newAlert = getsAlerts;
 
-        Meteor.user().update(newAlert);
+        //Meteor.user().update(newAlert);
 				Meteor.users.update(this.userId, {$set: {"alerts.getsAlerts": newAlert}});
 				console.log(this.userId);
     }
