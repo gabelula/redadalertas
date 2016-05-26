@@ -56,9 +56,7 @@ export default class SidebarContent extends TrackerReact(Component) {
 	    <MaterialTitlePanel title="Menu" style={styles.sidebar}>
 	      <div style={styles.content}>
 	        <a href="/" style={styles.sidebarLink}>Inicio</a>
-	        <a href="/alertas" style={styles.sidebarLink}>Alertas</a>
-
-
+	        
 					<div style={styles.divider} />
 					<a id="logout" href="" style={Meteor.user() ? styles.sidebarLinkLoggedIn : styles.sidebarLinkLoggedOut} onClick={this.callLogout}>Salir</a>
 	      </div>

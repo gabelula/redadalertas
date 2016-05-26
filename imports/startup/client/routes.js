@@ -22,20 +22,20 @@ FlowRouter.route("/", {
     }
 });
 
-FlowRouter.route("/alertas", {
-		name: 'alertas',
-		//triggersEnter: [AccountsTemplates.ensureSignedIn],
-    action: function(params, queryParams) {
-        mount(Main, {yield: <Alertas/>});
-    }
-});
+// FlowRouter.route("/alertas", {
+// 		name: 'alertas',
+// 		//triggersEnter: [AccountsTemplates.ensureSignedIn],
+//     action: function(params, queryParams) {
+//         mount(Main, {yield: <Alertas/>});
+//     }
+// });
 
-FlowRouter.route("/sign-in", {
-		name: 'login',
-    action() {
-        mount(Main, {yield: <Login />});
-    }
-});
+// FlowRouter.route("/sign-in", {
+// 		name: 'login',
+//     action() {
+//         mount(Main, {yield: <Login />});
+//     }
+// });
 
 //Routes
 //AccountsTemplates.configureRoute('changePwd');
