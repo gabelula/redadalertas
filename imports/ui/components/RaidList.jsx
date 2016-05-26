@@ -19,13 +19,13 @@ export default class RaidList extends TrackerReact(Component){
 	}
 
 	raids() {
-		return Raids.find().fetch();
+		return Raids.find().fetch().reverse();
 	}
 
 	render() {
 		return(
 			<div>
-				<h3>List of Raids</h3>
+				<h3>Redadas:</h3>
 
 				{this.raids().map((raid) => <RaidListItem description={raid.description} address={raid.address} created={raid.createdOn.valueOf()} key={raid._id} />)}
 

@@ -6,6 +6,7 @@ import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { Meteor } from 'meteor/meteor';
 import moment from 'moment';
 
+
 const style = {
 	fontSize: '12em',
 	fontWeight: '100'
