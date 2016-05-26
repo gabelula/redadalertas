@@ -6,10 +6,13 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 export const updateAlert = new ValidatedMethod({
     name: 'user.updateAlert',
     validate: new SimpleSchema({
-        getsAlerts: { type: Boolean }
+        getsAlerts: { type: Boolean },
+				mobileCarrier: { type: String },
+				mobileNumber: { type: String }
+
 
     }).validator(),
-    run({ getsAlerts }) {
+    run({ alertData }) {
         if (!this.userId) {
             throw new Meteor.Error('Necesita iniciar sesion para realizar esta operacion');
         }
@@ -17,7 +20,12 @@ export const updateAlert = new ValidatedMethod({
         const newAlert = getsAlerts;
 
         //Meteor.user().update(newAlert);
-				Meteor.users.update(this.userId, {$set: {"alerts.getsAlerts": newAlert}});
+				Meteor.users.update(this.userId, {$set: {
+					'alerts.getsAlerts': alertData.getsAlerts,
+					'alerts.mobileCarrier': alertData.mobileCarrier,
+					'alerts.mobileNumber': alertData.mobileNumber
+				}});
+
 				console.log(this.userId);
     }
 });

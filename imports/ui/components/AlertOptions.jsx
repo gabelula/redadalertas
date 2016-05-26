@@ -79,7 +79,27 @@ export default class AlertOptions extends TrackerReact(Component) {
 	}
 
 	saveAlertInfo(e) {
-		Meteor.users.update(Meteor.userId(), {$set: {"alerts.getsAlerts": this.state.getsAlerts}});
+		console.log('getsAlerts: ' + this.state.getsAlerts);
+
+		var celNumber = document.getElementById('cel-number').value.trim();
+		console.log('celNumber: ' + celNumber);
+		var carrier = document.getElementById('mobile-carrier').value.trim();
+		console.log('carrier: ' + carrier);
+
+		var alertData = {
+			getsAlerts: this.state.getsAlerts,
+			mobileCarrier: carrier,
+			mobileNumber: celNumber
+		};
+
+		updateAlert.call(alertData,(err) => {
+			if (err && err.error) {
+				return err.error;
+			}else{
+				console.log('Submission was a success: ');
+			}
+		});
+
 
 
 		this.setState({
@@ -94,7 +114,7 @@ export default class AlertOptions extends TrackerReact(Component) {
 	}
 
 	render() {
-		console.log(this.state.getsAlerts);
+		console.log(Meteor.user());
 
 		return (
 			<div>
@@ -114,6 +134,7 @@ export default class AlertOptions extends TrackerReact(Component) {
 		          floatingLabelText="Tu Compañia Celular"
 	      			filter={AutoComplete.fuzzyFilter}
 							maxSearchResults={5}
+							id="mobile-carrier"
 
 		        />
 						<br />

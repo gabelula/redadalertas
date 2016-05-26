@@ -8,6 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import MaterialTitlePanel from '../components/MaterialTitlePanel.jsx';
 
 
+
 const styles = {
   contentHeaderMenuLink: {
     textDecoration: 'none',
@@ -68,6 +69,7 @@ export default class Main extends Component {
   }
 
   render() {
+
 		const sidebar = <SidebarContent />;
 
     const contentHeader = (

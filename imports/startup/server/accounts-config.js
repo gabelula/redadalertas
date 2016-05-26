@@ -1,7 +1,7 @@
 import { Accounts } from 'meteor/accounts-base';
 
 Accounts.onCreateUser(function (options, user) {
-	user.isAdmin = false;
+	user.isAdmin = true;
 	user.alerts = {};
 	user.alerts.getsAlerts = false;
 	user.alerts.mobileCarrier = '';
