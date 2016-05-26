@@ -24,7 +24,7 @@ export default class AlertStatus extends TrackerReact(Component) {
 
 
 	render() {
-		console.log('Rendered AlertStatus: ' + Meteor.user().getsAlerts);
+		console.log('Rendered AlertStatus: ' + this.state.getsAlerts);
 
 		var showAlerts = Meteor.user().getsAlerts;
 

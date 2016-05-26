@@ -1,8 +1,11 @@
 import { Accounts } from 'meteor/accounts-base';
 
 Accounts.onCreateUser(function (options, user) {
-	user.getsAlerts = false;
 	user.isAdmin = false;
+	user.alerts = {};
+	user.alerts.getsAlerts = false;
+	user.alerts.mobileCarrier = '';
+	user.alerts.mobileNumber = '';
 	return user;
 });
 

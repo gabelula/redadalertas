@@ -4,12 +4,13 @@ import ReactDOM from 'react-dom';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { Meteor } from 'meteor/meteor';
 import AccountsUIWrapper from '../AccountsUIWrapper.jsx';
-import Toggle from 'material-ui/Toggle';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
 import AlertStatus from '../components/AlertStatus.jsx';
 
+import AlertOptions from '../components/AlertOptions.jsx';
+
 import { updateAlert } from '../../api/users/methods.js';
+
+const thisUser = Meteor.user();
 
 const styles = {
   block: {
@@ -23,6 +24,8 @@ const styles = {
 	}
 };
 
+const dataSource = ['12345', '23456', '34567', 'one', 'two', 'three', 'thirty', 'verizon', 't-mobile', 'cricket'];
+
 export default class Alertas extends TrackerReact(Component) {
 
 	constructor(props) {
@@ -30,37 +33,18 @@ export default class Alertas extends TrackerReact(Component) {
 
 	    this.state = {
 				subscription: {
-					userData: Meteor.subscribe('userData')
-				},
-				getsAlerts: false
+					//userData: Meteor.subscribe('userData')
+				}
+
+
 	    };
 	}
 
-	componentDidMount() {
-		//ReactDOM.render(<LogInButtonsDialog />, document.getElementById('login'));
-	}
-
 	componentWillUnmount() {
-		this.state.subscription.userData.stop();
+		//this.state.subscription.userData.stop();
   }
 
-	handleAlertChange() {
-		//this.state.getsAlerts = !this.state.getsAlerts;
-		//this.setState({getsAlerts: !this.state.getsAlerts});
-		//Meteor.user().getsAlerts = !this.state.getsAlerts;
-		//console.log('In Alertas.jsx: ' + Meteor.user().getsAlerts);
-		updateAlert.call(!this.state.getsAlerts, (err) => {
-			if (err && err.error) {
-				return err.error;
-			}
-			console.log('Submission was a success: ');
-		});
-	}
-
-
 	render() {
-
-		let self = this;
 		return (
 			<div>
 				<h2>
@@ -69,23 +53,11 @@ export default class Alertas extends TrackerReact(Component) {
 
 				{
 					Meteor.user() ?
-					<span>
-					<AlertStatus getsAlerts={this.state.getsAlerts} />
-					<Toggle
-						label="Recibe alertas de redadas"
-						labelPosition="right"
-						style={styles.toggle}
-						id="alert-status"
-						defaultToggled={Meteor.user().getsAlerts}
-						onToggle={this.handleAlertChange.bind(this)} />
-					<br />
-					<TextField hintText="Tu numero celular" id="cel-number" />
-					<br />
-					<RaisedButton type="submit" className="report-submit" label="Inscribir a Alertas" primary={true} style={styles.button} />
-					</span>
+					<AlertOptions />
 					:
 					<AccountsUIWrapper />
 				}
+
 
 
 			</div>

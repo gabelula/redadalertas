@@ -27,6 +27,7 @@ aldeed:simple-schema
 ultimatejs:tracker-react
 #useraccounts:core
 accounts-password
+accounts-facebook
 accounts-ui
 #accounts-ui-unstyled
 #useraccounts:materialize

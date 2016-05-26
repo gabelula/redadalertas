@@ -5,6 +5,7 @@ import RaidMap from '../components/RaidMap.jsx';
 import ReportForm from '../components/ReportForm.jsx';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import AccountsUIWrapper from '../AccountsUIWrapper.jsx';
+import Login from './Login.jsx';
 
 
 export default class Home extends TrackerReact(Component) {
