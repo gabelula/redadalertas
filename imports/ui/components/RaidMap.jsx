@@ -7,6 +7,8 @@ import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { Meteor } from 'meteor/meteor';
 import {Raids} from '../../api/raids/raids.js';
 
+const googlemapskey = Meteor.settings.public.googlemapskey;
+
 const coords = {
   lat: 39.6630348,
   lng: -98.9540999
@@ -57,6 +59,10 @@ export default class RaidMap extends TrackerReact(React.Component) {
 	}
 
 	render() {
+		var gmapParams = {
+			v: '3.exp',
+			key: googlemapskey
+		}
 
 		return (
 			<Gmaps
@@ -66,10 +72,7 @@ export default class RaidMap extends TrackerReact(React.Component) {
         lng={coords.lng}
         zoom={4}
         loadingMessage={this.errorImage()}
-        params={{
-					v: '3.exp',
-					key: 'AIzaSyAME4t3G4A-annYQdxTHTMYjBw8ZURl5xA'
-				}}
+        params={gmapParams}
         onMapCreated={this.onMapCreated}>
 
 					{this.raids().map((raid) => <Marker lat={raid.geoLocation.lat} lng={raid.geoLocation.lng} draggable={false} key={raid._id} animation={google.maps.Animation.DROP} />)}
