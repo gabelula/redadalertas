@@ -28,6 +28,8 @@ const styles = {
 	}
 };
 
+const superGeo = Geolocation.latLng();
+
 export default class ReportForm extends TrackerReact(Component) {
 
 	constructor(props) {
@@ -52,6 +54,7 @@ export default class ReportForm extends TrackerReact(Component) {
 
 	insertRaid(e) {
 		e.preventDefault();
+		console.log(superGeo);
 
 		const geocoder = new google.maps.Geocoder();
 
@@ -111,15 +114,8 @@ export default class ReportForm extends TrackerReact(Component) {
 			<div>
 				<form onSubmit={this.insertRaid}>
 					<TextField hintText="Describe la redada" id="txtDescription" />
-					<Toggle
-						label="Usa datos de lugar de tu telefono/computadora"
-						labelPosition="right"
-						style={styles.toggle}
-						id="alert-status"
-						defaultToggled={this.state.useGeo}
-						onToggle={this.handleGeoChange.bind(this)} />
 
-					{this.state.useGeo ? '' : this.renderGeo()}
+					<TextField hintText="Codigo Postal" id="txtAddress" />
 
 					<RaisedButton type="submit" className="report-submit" label="Reporta" backgroundColor="rgb(121, 9, 9)" labelColor="#ffffff" style={style} />
 				</form>
