@@ -5,13 +5,27 @@ import { Meteor } from 'meteor/meteor';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import Toggle from 'material-ui/Toggle';
 
 import { Raids } from '../../api/raids/raids.js';
 import { addRaid } from '../../api/raids/methods.js';
 import check from 'meteor/check';
+import { Geolocation } from 'meteor/mdg:geolocation';
 
 const style = {
   margin: 12,
+};
+
+const styles = {
+  block: {
+    maxWidth: 250,
+  },
+  toggle: {
+    marginBottom: 16,
+  },
+	button: {
+		margin: 12
+	}
 };
 
 export default class ReportForm extends TrackerReact(Component) {
@@ -19,10 +33,17 @@ export default class ReportForm extends TrackerReact(Component) {
 	constructor(props) {
 	    super(props);
 	    this.state = {
-			subscription: {
-				raids: Meteor.subscribe('allRaids')
-			}
+				subscription: {
+					raids: Meteor.subscribe('allRaids')
+				},
+				geolocation: Geolocation.latLng(),
+				useGeo: true
 	    };
+	}
+
+	componentDidMount() {
+		var geoLocation = Geolocation.latLng();
+		this.setState({geoLocation: geoLocation});
 	}
 
 	raids() {
@@ -71,12 +92,34 @@ export default class ReportForm extends TrackerReact(Component) {
 		this.state.subscription.raids.stop();
 	}
 
+	handleGeoChange() {
+		this.setState({useGeo: !this.state.useGeo});
+	}
+
+	renderGeo() {
+		return (<TextField hintText="Codigo Postal" id="txtAddress" />);
+	}
+
+
 	render() {
+		var geoLocation = Geolocation.latLng();
+		console.log(geoLocation);
+
+		var self = this;
+
 		return (
 			<div>
 				<form onSubmit={this.insertRaid}>
 					<TextField hintText="Describe la redada" id="txtDescription" />
-					<TextField hintText="Codigo Postal" id="txtAddress" />
+					<Toggle
+						label="Usa datos de lugar de tu telefono/computadora"
+						labelPosition="right"
+						style={styles.toggle}
+						id="alert-status"
+						defaultToggled={this.state.useGeo}
+						onToggle={this.handleGeoChange.bind(this)} />
+
+					{this.state.useGeo ? '' : this.renderGeo()}
 
 					<RaisedButton type="submit" className="report-submit" label="Reporta" backgroundColor="rgb(121, 9, 9)" labelColor="#ffffff" style={style} />
 				</form>
