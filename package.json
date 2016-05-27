@@ -1,6 +1,6 @@
 {
   "name": "redadas-de-obama",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A web app for crowdsourcing immigration raid info so undocumented people can avoid them.",
   "main": "main.js",
   "scripts": {
