@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
-import { twilioClient } from '../../startup/server/twilio-config.js';
+//import { twilioClient } from '../../startup/server/twilio-config.js';
 
 
 export const sendSMS = new ValidatedMethod({

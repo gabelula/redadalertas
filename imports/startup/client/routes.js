@@ -8,6 +8,7 @@ import Main from '../../ui/layouts/Main.jsx';
 import Home from '../../ui/pages/Home.jsx';
 import Alertas from '../../ui/pages/Alertas.jsx';
 import Login from '../../ui/pages/Login.jsx';
+import Send from '../../ui/pages/Send.jsx';
 
 Accounts.ui.config({
   passwordSignupFields: 'USERNAME_ONLY',
@@ -36,6 +37,13 @@ FlowRouter.route("/", {
 //         mount(Main, {yield: <Login />});
 //     }
 // });
+
+FlowRouter.route("/send", {
+		name: 'send',
+    action() {
+        mount(Main, {yield: <Send />});
+    }
+});
 
 //Routes
 //AccountsTemplates.configureRoute('changePwd');
