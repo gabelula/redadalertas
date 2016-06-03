@@ -1,11 +1,9 @@
 # Redadas-de-obama
-A web app for crowdsourcing immigration raid info so undocumented people can avoid them. To be hosted on [RedadasDeObama.com](http://RedadasDeObama.com).
-
-**This is an experiment of combining rapid response online activism with web app development.**
+A web app for crowdsourcing immigration raid info so undocumented people can avoid them. To be hosted on [www.RedadasDeObama.com](http://RedadasDeObama.com).
 
 ![https://dl.dropboxusercontent.com/u/16972085/cosecha/160513-redadas-de-obama.jpg](https://dl.dropboxusercontent.com/u/16972085/cosecha/160513-redadas-de-obama.jpg)
 
-![Home Page](https://dl.dropboxusercontent.com/u/16972085/cosecha/redadas-de-obama/Screen%20Shot%202016-05-20%20at%206.40.50%20PM.png)
+![Home Page](https://dl.dropboxusercontent.com/u/16972085/cosecha/redadas-de-obama/Screen%20Shot%202016-06-03%20at%202.43.06%20PM.png)
 
 ![Alerts Page](https://dl.dropboxusercontent.com/u/16972085/cosecha/redadas-de-obama/Screen%20Shot%202016-05-20%20at%206.41.00%20PM.png)
 
@@ -21,9 +19,13 @@ Create a web app where people can do the following things:
 
 This is gonna be a fast moving project. For that reason, we will be using the [Meteor.js](http://meteor.com) framework using React as the templating for front end.
 
+To make it a mobile application, we will be using Cordova.
+
 ## Timeline
 
-Again, pretty rushed. Let's shoot for a deadline of launching by May 27, 2016.
+- June 3, 2016: Launch Beta App
+- June 27, 2016: Public Launch
+- August 1, 2016: Launch iOS and Android Apps
 
 ## How to join the project
 
