@@ -77,7 +77,7 @@ export default class Main extends Component {
          <a onClick={this.toggleOpen.bind(this)} href="#" style={styles.contentHeaderMenuLink}>
 					 <i className="fa fa-bars"></i>
          </a>}
-        <span style={styles.headerMenuLinkText}>{TAPi18n.__('redadas_de_obama')}</span>
+        <span style={styles.headerMenuLinkText}>{TAPi18n.__('obamas_raids')}</span>
       </span>);
 
     const sidebarProps = {

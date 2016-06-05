@@ -6,6 +6,7 @@ import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { Meteor } from 'meteor/meteor';
 import {Raids} from '../../api/raids/raids.js';
 import RaidListItem from './RaidListItem.jsx';
+import { TAPi18n } from 'meteor/tap:i18n';
 
 export default class RaidList extends TrackerReact(Component){
 	constructor(props) {
@@ -25,7 +26,7 @@ export default class RaidList extends TrackerReact(Component){
 	render() {
 		return(
 			<div>
-				<h3>Redadas:</h3>
+				<h3>{TAPi18n.__('Raids')}:</h3>
 
 				{this.raids().map((raid) => <RaidListItem description={raid.description} address={raid.address} created={raid.createdOn.valueOf()} key={raid._id} />)}
 

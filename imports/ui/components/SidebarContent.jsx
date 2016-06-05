@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import MaterialTitlePanel from './MaterialTitlePanel';
 import { Meteor } from 'meteor/meteor';
+import { TAPi18n } from 'meteor/tap:i18n';
 
 const styles = {
   sidebar: {
@@ -55,10 +56,10 @@ export default class SidebarContent extends TrackerReact(Component) {
 		return (
 	    <MaterialTitlePanel title="Menu" style={styles.sidebar}>
 	      <div style={styles.content}>
-	        <a href="/" style={styles.sidebarLink}>Inicio</a>
-	        
+	        <a href="/" style={styles.sidebarLink}>{TAPi18n.__('Home')}</a>
+
 					<div style={styles.divider} />
-					<a id="logout" href="" style={Meteor.user() ? styles.sidebarLinkLoggedIn : styles.sidebarLinkLoggedOut} onClick={this.callLogout}>Salir</a>
+					<a id="logout" href="" style={Meteor.user() ? styles.sidebarLinkLoggedIn : styles.sidebarLinkLoggedOut} onClick={this.callLogout}>{TAPi18n.__('Logout')}</a>
 	      </div>
 	    </MaterialTitlePanel>
 	  );

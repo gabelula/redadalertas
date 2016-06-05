@@ -11,6 +11,7 @@ import { Raids } from '../../api/raids/raids.js';
 import { addRaid } from '../../api/raids/methods.js';
 import check from 'meteor/check';
 import { Geolocation } from 'meteor/mdg:geolocation';
+import { TAPi18n } from 'meteor/tap:i18n';
 
 const style = {
   margin: 12,
@@ -113,11 +114,11 @@ export default class ReportForm extends TrackerReact(Component) {
 		return (
 			<div>
 				<form onSubmit={this.insertRaid}>
-					<TextField hintText="Describe la redada" id="txtDescription" />
+					<TextField hintText={TAPi18n.__('describe_the_raid')} id="txtDescription" />
 
-					<TextField hintText="Codigo Postal" id="txtAddress" />
+					<TextField hintText={TAPi18n.__('zip_code')} id="txtAddress" />
 
-					<RaisedButton type="submit" className="report-submit" label="Reporta" backgroundColor="rgb(121, 9, 9)" labelColor="#ffffff" style={style} />
+					<RaisedButton type="submit" className="report-submit" label={TAPi18n.__('report_a_raid')} backgroundColor="rgb(121, 9, 9)" labelColor="#ffffff" style={style} />
 				</form>
 
 
