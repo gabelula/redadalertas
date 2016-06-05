@@ -5,7 +5,8 @@
     "main": "main.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "deploy": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy --settings settings.json www.redadasdeobama.com"
+        "deploy": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy --settings settings.json www.redadasdeobama.com",
+				"meteor": "meteor --settings settings.json"
     },
     "repository": {
         "type": "git",

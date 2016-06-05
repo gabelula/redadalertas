@@ -17,31 +17,21 @@ standard-minifier-js    # JS minifier run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
-#autopublish             # Publish all data to the clients (for prototyping)
-#insecure                # Allow all DB writes from clients (for prototyping)
-
 kadira:flow-router
-#kadira:blaze-layout
 fortawesome:fontawesome
 aldeed:simple-schema
 ultimatejs:tracker-react
-#useraccounts:core
 accounts-password
 accounts-facebook
 accounts-ui
-#accounts-ui-unstyled
-#useraccounts:materialize
-#useraccounts:flow-routing
 http
-#alt:react-accounts-ui
 check
 session
 email
 mdg:validated-method
 mdg:validation-error
 aldeed:collection2
-#softwarerero:accounts-t9n
-#service-configuration
-#arillo:flow-router-helpers
 static-html
 mdg:geolocation
+tap:i18n
+#gwendall:tapi18n-react

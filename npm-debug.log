@@ -1,0 +1,278 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/Users/celso/.meteor/packages/meteor-tool/.1.3.2_4.k4jg3o++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'react-addons-css-transition-group' ]
+2 info using npm@2.14.22
+3 info using node@v0.10.43
+4 verbose install initial load of /Users/celso/Dev/redadas-de-obama/package.json
+5 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/asap/package.json
+6 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/authy/package.json
+7 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/babel-runtime/package.json
+8 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/core-js/package.json
+9 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/domready/package.json
+10 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/encoding/package.json
+11 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/fbjs/package.json
+12 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/https/package.json
+13 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/iconv-lite/package.json
+14 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/is-stream/package.json
+15 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/isomorphic-fetch/package.json
+16 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/js-tokens/package.json
+17 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/loose-envify/package.json
+18 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/material-ui/package.json
+19 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/meteor-node-stubs/package.json
+20 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/moment/package.json
+21 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/node-fetch/package.json
+22 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/object-assign/package.json
+23 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/promise/package.json
+24 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react/package.json
+25 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-create-fragment/package.json
+26 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group/package.json
+27 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-linked-state-mixin/package.json
+28 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-perf/package.json
+29 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-pure-render-mixin/package.json
+30 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-test-utils/package.json
+31 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-transition-group/package.json
+32 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-update/package.json
+33 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-dom/package.json
+34 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-gmaps/package.json
+35 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-mounter/package.json
+36 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-redux/package.json
+37 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-router/package.json
+38 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-sidebar/package.json
+39 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-tap-event-plugin/package.json
+40 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/redux/package.json
+41 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/redux-thunk/package.json
+42 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/sms-address/package.json
+43 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/twilio/package.json
+44 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/ua-parser-js/package.json
+45 verbose installManyTop reading scoped package data from /Users/celso/Dev/redadas-de-obama/node_modules/whatwg-fetch/package.json
+46 info package.json https@1.0.0 https is also the name of a node core module.
+47 info package.json https@1.0.0 No repository field.
+48 info package.json https@1.0.0 No README data
+49 verbose readDependencies loading dependencies from /Users/celso/Dev/redadas-de-obama/package.json
+50 verbose install react-addons-css-transition-group is installed as 0.14.8
+51 silly cache add args [ 'react-addons-css-transition-group', null ]
+52 verbose cache add spec react-addons-css-transition-group
+53 silly cache add parsed spec { raw: 'react-addons-css-transition-group',
+53 silly cache add   scope: null,
+53 silly cache add   name: 'react-addons-css-transition-group',
+53 silly cache add   rawSpec: '',
+53 silly cache add   spec: 'latest',
+53 silly cache add   type: 'tag' }
+54 silly addNamed react-addons-css-transition-group@latest
+55 verbose addNamed "latest" is being treated as a dist-tag for react-addons-css-transition-group
+56 info addNameTag [ 'react-addons-css-transition-group', 'latest' ]
+57 silly mapToRegistry name react-addons-css-transition-group
+58 silly mapToRegistry using default registry
+59 silly mapToRegistry registry https://registry.npmjs.org/
+60 silly mapToRegistry uri https://registry.npmjs.org/react-addons-css-transition-group
+61 verbose addNameTag registry:https://registry.npmjs.org/react-addons-css-transition-group not in flight; fetching
+62 verbose request uri https://registry.npmjs.org/react-addons-css-transition-group
+63 verbose request no auth needed
+64 info attempt registry request try #1 at 00:15:51
+65 verbose request id b45f1110b21c2865
+66 verbose etag "1VXNCPLH14JYW8SJCXD97ITD6"
+67 http request GET https://registry.npmjs.org/react-addons-css-transition-group
+68 http 304 https://registry.npmjs.org/react-addons-css-transition-group
+69 verbose headers { date: 'Sun, 05 Jun 2016 07:15:51 GMT',
+69 verbose headers   via: '1.1 varnish',
+69 verbose headers   'cache-control': 'max-age=300',
+69 verbose headers   etag: '"1VXNCPLH14JYW8SJCXD97ITD6"',
+69 verbose headers   age: '164',
+69 verbose headers   connection: 'keep-alive',
+69 verbose headers   'x-served-by': 'cache-sjc3126-SJC',
+69 verbose headers   'x-cache': 'HIT',
+69 verbose headers   'x-cache-hits': '8',
+69 verbose headers   'x-timer': 'S1465110951.573799,VS0,VE0',
+69 verbose headers   vary: 'Accept-Encoding' }
+70 silly get cb [ 304,
+70 silly get   { date: 'Sun, 05 Jun 2016 07:15:51 GMT',
+70 silly get     via: '1.1 varnish',
+70 silly get     'cache-control': 'max-age=300',
+70 silly get     etag: '"1VXNCPLH14JYW8SJCXD97ITD6"',
+70 silly get     age: '164',
+70 silly get     connection: 'keep-alive',
+70 silly get     'x-served-by': 'cache-sjc3126-SJC',
+70 silly get     'x-cache': 'HIT',
+70 silly get     'x-cache-hits': '8',
+70 silly get     'x-timer': 'S1465110951.573799,VS0,VE0',
+70 silly get     vary: 'Accept-Encoding' } ]
+71 verbose etag https://registry.npmjs.org/react-addons-css-transition-group from cache
+72 verbose get saving react-addons-css-transition-group to /Users/celso/.npm/registry.npmjs.org/react-addons-css-transition-group/.cache.json
+73 verbose correctMkdir /Users/celso/.npm correctMkdir not in flight; initializing
+74 silly addNameTag next cb for react-addons-css-transition-group with tag latest
+75 silly addNamed react-addons-css-transition-group@15.1.0
+76 verbose addNamed "15.1.0" is a plain semver version for react-addons-css-transition-group
+77 silly mapToRegistry name react-addons-css-transition-group
+78 silly mapToRegistry using default registry
+79 silly mapToRegistry registry https://registry.npmjs.org/
+80 silly mapToRegistry uri https://registry.npmjs.org/react-addons-css-transition-group
+81 verbose addRemoteTarball https://registry.npmjs.org/react-addons-css-transition-group/-/react-addons-css-transition-group-15.1.0.tgz not in flight; adding
+82 verbose addRemoteTarball [ 'https://registry.npmjs.org/react-addons-css-transition-group/-/react-addons-css-transition-group-15.1.0.tgz',
+82 verbose addRemoteTarball   '057024a699386a47a1ff7e48b2138a0ad0291f14' ]
+83 info retry fetch attempt 1 at 00:15:51
+84 info attempt registry request try #1 at 00:15:51
+85 http fetch GET https://registry.npmjs.org/react-addons-css-transition-group/-/react-addons-css-transition-group-15.1.0.tgz
+86 http fetch 200 https://registry.npmjs.org/react-addons-css-transition-group/-/react-addons-css-transition-group-15.1.0.tgz
+87 silly fetchAndShaCheck shasum 057024a699386a47a1ff7e48b2138a0ad0291f14
+88 verbose addTmpTarball /tmp/npm-4032-8246042d/registry.npmjs.org/react-addons-css-transition-group/-/react-addons-css-transition-group-15.1.0.tgz not in flight; adding
+89 verbose addTmpTarball already have metadata; skipping unpack for react-addons-css-transition-group@15.1.0
+90 verbose correctMkdir /Users/celso/.npm correctMkdir not in flight; initializing
+91 silly cache afterAdd react-addons-css-transition-group@15.1.0
+92 verbose afterAdd /Users/celso/.npm/react-addons-css-transition-group/15.1.0/package/package.json not in flight; writing
+93 verbose correctMkdir /Users/celso/.npm correctMkdir not in flight; initializing
+94 verbose afterAdd /Users/celso/.npm/react-addons-css-transition-group/15.1.0/package/package.json written
+95 silly install resolved [ { name: 'react-addons-css-transition-group',
+95 silly install resolved     version: '15.1.0',
+95 silly install resolved     main: 'index.js',
+95 silly install resolved     repository:
+95 silly install resolved      { type: 'git',
+95 silly install resolved        url: 'git+https://github.com/facebook/react.git' },
+95 silly install resolved     keywords: [ 'react', 'react-addon' ],
+95 silly install resolved     license: 'BSD-3-Clause',
+95 silly install resolved     dependencies: {},
+95 silly install resolved     peerDependencies: { react: '^15.1.0' },
+95 silly install resolved     description: 'This package provides the React CSSTransitionGroup add-on.',
+95 silly install resolved     bugs: { url: 'https://github.com/facebook/react/issues' },
+95 silly install resolved     homepage: 'https://github.com/facebook/react#readme',
+95 silly install resolved     _id: 'react-addons-css-transition-group@15.1.0',
+95 silly install resolved     _shasum: '057024a699386a47a1ff7e48b2138a0ad0291f14',
+95 silly install resolved     _resolved: 'https://registry.npmjs.org/react-addons-css-transition-group/-/react-addons-css-transition-group-15.1.0.tgz',
+95 silly install resolved     _from: 'react-addons-css-transition-group@latest',
+95 silly install resolved     scripts: {},
+95 silly install resolved     _npmVersion: '2.15.1',
+95 silly install resolved     _nodeVersion: '4.4.3',
+95 silly install resolved     _npmUser: { name: 'zpao', email: 'paul@oshannessy.com' },
+95 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+95 silly install resolved     dist:
+95 silly install resolved      { shasum: '057024a699386a47a1ff7e48b2138a0ad0291f14',
+95 silly install resolved        tarball: 'https://registry.npmjs.org/react-addons-css-transition-group/-/react-addons-css-transition-group-15.1.0.tgz' },
+95 silly install resolved     _npmOperationalInternal:
+95 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+95 silly install resolved        tmp: 'tmp/react-addons-css-transition-group-15.1.0.tgz_1463785556731_0.7446609768085182' },
+95 silly install resolved     directories: {} } ]
+96 info install react-addons-css-transition-group@15.1.0 into /Users/celso/Dev/redadas-de-obama
+97 info installOne react-addons-css-transition-group@15.1.0
+98 verbose installOne of react-addons-css-transition-group to /Users/celso/Dev/redadas-de-obama not in flight; installing
+99 verbose correctMkdir /Users/celso/.npm/_locks correctMkdir not in flight; initializing
+100 verbose lock using /Users/celso/.npm/_locks/react-addons-css-transit-bb049225fbbb1dd9.lock for /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group
+101 silly install write writing react-addons-css-transition-group 15.1.0 to /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group
+102 verbose unbuild node_modules/react-addons-css-transition-group
+103 info preuninstall react-addons-css-transition-group@0.14.8
+104 info uninstall react-addons-css-transition-group@0.14.8
+105 verbose unbuild rmStuff react-addons-css-transition-group@0.14.8 from /Users/celso/Dev/redadas-de-obama/node_modules
+106 info postuninstall react-addons-css-transition-group@0.14.8
+107 silly gentlyRm /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group is being purged from base /Users/celso/Dev/redadas-de-obama
+108 verbose gentlyRm don't care about contents; nuking /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group
+109 silly vacuum-fs purging /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group
+110 silly vacuum-fs quitting because other entries in /Users/celso/Dev/redadas-de-obama/node_modules
+111 verbose tar unpack /Users/celso/.npm/react-addons-css-transition-group/15.1.0/package.tgz
+112 verbose tar unpacking to /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group
+113 silly gentlyRm /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group is being purged
+114 verbose gentlyRm don't care about contents; nuking /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group
+115 silly gunzTarPerm modes [ '755', '644' ]
+116 silly gunzTarPerm extractEntry package.json
+117 silly gunzTarPerm extractEntry README.md
+118 silly gunzTarPerm extractEntry LICENSE
+119 silly gunzTarPerm extractEntry index.js
+120 silly gunzTarPerm extractEntry PATENTS
+121 verbose write writing to /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group/package.json
+122 info preinstall react-addons-css-transition-group@15.1.0
+123 verbose readDependencies loading dependencies from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group/package.json
+124 silly prepareForInstallMany adding react@^15.1.0 from react-addons-css-transition-group peerDependencies
+125 warn peerDependencies The peer dependency react@^15.1.0 included from react-addons-css-transition-group will no
+126 warn peerDependencies longer be automatically installed to fulfill the peerDependency
+127 warn peerDependencies in npm 3+. Your application will need to depend on it explicitly.
+128 verbose readDependencies loading dependencies from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group/package.json
+129 silly install resolved []
+130 verbose about to build /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group
+131 info build /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group
+132 info linkStuff react-addons-css-transition-group@15.1.0
+133 silly linkStuff react-addons-css-transition-group@15.1.0 has /Users/celso/Dev/redadas-de-obama/node_modules as its parent node_modules
+134 verbose linkBins react-addons-css-transition-group@15.1.0
+135 verbose linkMans react-addons-css-transition-group@15.1.0
+136 verbose rebuildBundles react-addons-css-transition-group@15.1.0
+137 info install react-addons-css-transition-group@15.1.0
+138 info postinstall react-addons-css-transition-group@15.1.0
+139 verbose readDependencies loading dependencies from /Users/celso/Dev/redadas-de-obama/package.json
+140 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/asap/package.json
+141 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/authy/package.json
+142 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/babel-runtime/package.json
+143 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/core-js/package.json
+144 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/domready/package.json
+145 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/encoding/package.json
+146 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/fbjs/package.json
+147 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/https/package.json
+148 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/iconv-lite/package.json
+149 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/is-stream/package.json
+150 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/isomorphic-fetch/package.json
+151 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/js-tokens/package.json
+152 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/loose-envify/package.json
+153 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/material-ui/package.json
+154 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/meteor-node-stubs/package.json
+155 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/moment/package.json
+156 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/node-fetch/package.json
+157 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/object-assign/package.json
+158 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/promise/package.json
+159 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react/package.json
+160 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-create-fragment/package.json
+161 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group/package.json
+162 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-linked-state-mixin/package.json
+163 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-perf/package.json
+164 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-pure-render-mixin/package.json
+165 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-test-utils/package.json
+166 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-transition-group/package.json
+167 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-update/package.json
+168 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-dom/package.json
+169 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-gmaps/package.json
+170 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-mounter/package.json
+171 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-redux/package.json
+172 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-router/package.json
+173 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-sidebar/package.json
+174 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/react-tap-event-plugin/package.json
+175 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/redux/package.json
+176 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/redux-thunk/package.json
+177 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/sms-address/package.json
+178 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/twilio/package.json
+179 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/ua-parser-js/package.json
+180 verbose targetResolver reading package data from /Users/celso/Dev/redadas-de-obama/node_modules/whatwg-fetch/package.json
+181 verbose already installed skipping react@^15.1.0 /Users/celso/Dev/redadas-de-obama
+182 silly install resolved []
+183 verbose unlock done using /Users/celso/.npm/_locks/react-addons-css-transit-bb049225fbbb1dd9.lock for /Users/celso/Dev/redadas-de-obama/node_modules/react-addons-css-transition-group
+184 verbose validateInstall loading /Users/celso/Dev/redadas-de-obama/package.json for validation
+185 verbose stack Error: The package react@15.0.2 does not satisfy its siblings' peerDependencies requirements!
+185 verbose stack     at /Users/celso/.meteor/packages/meteor-tool/.1.3.2_4.k4jg3o++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/lib/install.js:125:32
+185 verbose stack     at /Users/celso/.meteor/packages/meteor-tool/.1.3.2_4.k4jg3o++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/lib/install.js:268:7
+185 verbose stack     at /Users/celso/.meteor/packages/meteor-tool/.1.3.2_4.k4jg3o++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
+185 verbose stack     at /Users/celso/.meteor/packages/meteor-tool/.1.3.2_4.k4jg3o++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+185 verbose stack     at cb (/Users/celso/.meteor/packages/meteor-tool/.1.3.2_4.k4jg3o++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+185 verbose stack     at /Users/celso/.meteor/packages/meteor-tool/.1.3.2_4.k4jg3o++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+185 verbose stack     at cb (/Users/celso/.meteor/packages/meteor-tool/.1.3.2_4.k4jg3o++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+185 verbose stack     at /Users/celso/.meteor/packages/meteor-tool/.1.3.2_4.k4jg3o++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+185 verbose stack     at cb (/Users/celso/.meteor/packages/meteor-tool/.1.3.2_4.k4jg3o++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+185 verbose stack     at /Users/celso/.meteor/packages/meteor-tool/.1.3.2_4.k4jg3o++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+186 verbose cwd /Users/celso/Dev/redadas-de-obama
+187 error Darwin 15.5.0
+188 error argv "node" "/Users/celso/.meteor/packages/meteor-tool/.1.3.2_4.k4jg3o++os.osx.x86_64+web.browser+web.cordova/mt-os.osx.x86_64/dev_bundle/bin/npm" "install" "react-addons-css-transition-group"
+189 error node v0.10.43
+190 error npm  v2.14.22
+191 error code EPEERINVALID
+192 error peerinvalid The package react@15.0.2 does not satisfy its siblings' peerDependencies requirements!
+192 error peerinvalid Peer material-ui@0.15.0 wants react@^15.0.0
+192 error peerinvalid Peer react-dom@15.0.2 wants react@^15.0.2
+192 error peerinvalid Peer react-gmaps@1.5.0 wants react@^15.0.1
+192 error peerinvalid Peer react-mounter@1.2.0 wants react@0.14.x || 15.x.x
+192 error peerinvalid Peer react-redux@4.4.5 wants react@^0.14.0 || ^15.0.0-0
+192 error peerinvalid Peer react-sidebar@2.1.1 wants react@>=0.14.0
+192 error peerinvalid Peer react-tap-event-plugin@1.0.0 wants react@^15.0.0-0
+192 error peerinvalid Peer react-addons-create-fragment@0.14.8 wants react@^0.14.8
+192 error peerinvalid Peer react-addons-linked-state-mixin@0.14.8 wants react@^0.14.8
+192 error peerinvalid Peer react-addons-perf@0.14.8 wants react@^0.14.8
+192 error peerinvalid Peer react-addons-pure-render-mixin@0.14.8 wants react@^0.14.8
+192 error peerinvalid Peer react-addons-test-utils@0.14.8 wants react@^0.14.8
+192 error peerinvalid Peer react-addons-update@0.14.8 wants react@^0.14.8
+192 error peerinvalid Peer react-addons-css-transition-group@15.1.0 wants react@^15.1.0
+192 error peerinvalid Peer react-addons-transition-group@15.1.0 wants react@^15.1.0
+192 error peerinvalid Peer react-router@2.4.0 wants react@^0.14.0 || ^15.0.0
+193 verbose exit [ 1, true ]
