@@ -4,9 +4,8 @@ import Sidebar from 'react-sidebar';
 import SidebarContent from '../components/SidebarContent';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
 import MaterialTitlePanel from '../components/MaterialTitlePanel.jsx';
-
+import { TAPi18n } from 'meteor/tap:i18n';
 
 
 const styles = {
@@ -78,7 +77,7 @@ export default class Main extends Component {
          <a onClick={this.toggleOpen.bind(this)} href="#" style={styles.contentHeaderMenuLink}>
 					 <i className="fa fa-bars"></i>
          </a>}
-        <span style={styles.headerMenuLinkText}> Redadas de Obama</span>
+        <span style={styles.headerMenuLinkText}>{TAPi18n.__('redadas_de_obama')}</span>
       </span>);
 
     const sidebarProps = {
