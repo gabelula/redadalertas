@@ -89,7 +89,7 @@ export default class ReportForm extends TrackerReact(Component) {
 		const knowHappenedText = document.getElementById("know-happened-text").value;
 		const address = document.getElementById("txtAddress").value;
 		const phone = document.getElementById("txtPhone").value;
-
+		const verified = false;
 
 
 		geocoder.geocode({ 'address': address }, function (results, status) {
@@ -98,6 +98,7 @@ export default class ReportForm extends TrackerReact(Component) {
 				const longitude = results[0].geometry.location.lng();
 
 				addRaid.call({
+					verified,
 					dateOccurred,
 					anyDetained,
 					knowHappened,

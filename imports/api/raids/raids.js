@@ -16,6 +16,7 @@ Raids.deny({
 })
 
 export const raidSchema = new SimpleSchema({
+	verified: { type: Boolean },
 	dateOccurred: {type: String },
 	anyDetained: { type: String },
 	knowHappened: { type: String },
