@@ -16,8 +16,13 @@ Raids.deny({
 })
 
 export const raidSchema = new SimpleSchema({
+	dateOccurred: {type: String },
+	anyDetained: { type: String },
+	knowHappened: { type: String },
+	knowHappenedText: { type: String },
   address: { type: String, regEx: SimpleSchema.RegEx.ZipCode },
 	description: { type: String },
+	phone: { type: String },
 	createdOn: { type: Date },
 	geoLocation: { type: Object },
 	'geoLocation.lat': { type: Number, decimal: true },

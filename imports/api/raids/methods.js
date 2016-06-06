@@ -6,14 +6,19 @@ import { Raids, raidSchema } from './raids';
 export const addRaid = new ValidatedMethod({
     name: 'raids.add',
     validate: raidSchema.validator(),
-    run({ address, description, createdOn, geoLocation, media }) {
+    run({ dateOccurred, anyDetained, knowHappened, knowHappenedText, address, description, phone, createdOn, geoLocation, media }) {
         if (!this.userId) {
             throw new Meteor.Error('Necesita iniciar sesion para realizar esta operacion');
         }
 
         const raid = {
+						dateOccurred,
+						anyDetained,
+						knowHappened,
+						knowHappenedText,
             address,
             description,
+						phone,
             createdOn,
             geoLocation: {
                 lat: geoLocation.lat,

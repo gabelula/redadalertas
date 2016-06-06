@@ -45,7 +45,9 @@ export default class ReportForm extends TrackerReact(Component) {
 					raids: Meteor.subscribe('allRaids')
 				},
 				geolocation: Geolocation.latLng(),
-				useGeo: true
+				useGeo: true,
+				anyDetained: 'unsure',
+				knowHappened: 'news'
 	    };
 	}
 
@@ -58,16 +60,32 @@ export default class ReportForm extends TrackerReact(Component) {
 		return Raids.find().fetch();
 	}
 
+	chooseAnyDetained(e,value) {
+		e.preventDefault();
+		this.setState({ anyDetained: value });
+	}
+
+	chooseKnowHap( e,value ) {
+		e.preventDefault();
+		this.setState({ knowHappened: value });
+	}
+
 	insertRaid(e) {
 		e.preventDefault();
 		console.log(superGeo);
 
 		const geocoder = new google.maps.Geocoder();
 
-    const address = document.getElementById("txtAddress").value;
-		//check (address, String);
+
+		const dateOccurred = document.getElementById("date-occurred").value;
+		const anyDetained = this.state.anyDetained;
 		const description = document.getElementById("txtDescription").value;
-		//check (description, String);
+		const knowHappened = this.state.knowHappened;
+		const knowHappenedText = document.getElementById("know-happened-text").value;
+		const address = document.getElementById("txtAddress").value;
+		const phone = document.getElementById("txtPhone").value;
+
+
 
 		geocoder.geocode({ 'address': address }, function (results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
@@ -75,8 +93,13 @@ export default class ReportForm extends TrackerReact(Component) {
 				const longitude = results[0].geometry.location.lng();
 
 				addRaid.call({
+					dateOccurred,
+					anyDetained,
+					knowHappened,
+					knowHappenedText,
 					address,
 					description,
+					phone,
 					createdOn: new Date(),
 					geoLocation: { lat: latitude, lng: longitude },
 					media: {}
@@ -94,6 +117,9 @@ export default class ReportForm extends TrackerReact(Component) {
 		// Clear values
 		document.getElementById("txtAddress").value = '';
 		document.getElementById("txtDescription").value = '';
+		document.getElementById("date-occurred").value = '';
+		document.getElementById("know-happened-text").value = '';
+		document.getElementById("txtPhone").value = '';
 
 	}
 
@@ -116,10 +142,11 @@ export default class ReportForm extends TrackerReact(Component) {
 		return (
 			<div>
 				<h1>{TAPi18n.__('report_a_raid')}</h1>
-				<form onSubmit={this.insertRaid}>
-					<DatePicker hintText={TAPi18n.__('date_raid_occurred')} />
+				<form onSubmit={this.insertRaid.bind(this)}>
+					<DatePicker hintText={TAPi18n.__('date_raid_occurred')} id="date-occurred" name="date-occurred" />
+
 					<p>{TAPi18n.__('was_anybody_detained')}</p>
-					<RadioButtonGroup name="any-detained" defaultSelected="">
+					<RadioButtonGroup name="any-detained" defaultSelected="unsure" id="any-detained" name="any-detained" onChange={this.chooseAnyDetained.bind(this)}>
 
 		      <RadioButton
 		        value="yes"
@@ -139,12 +166,12 @@ export default class ReportForm extends TrackerReact(Component) {
 
 		    	</RadioButtonGroup>
 
-					<TextField hintText={TAPi18n.__('describe_the_raid')} id="txtDescription" multiLine={true}
+					<TextField hintText={TAPi18n.__('describe_the_raid')} id="txtDescription" name="txtDescription" multiLine={true}
       rows={2} fullWidth={true} />
 
 					<p>{TAPi18n.__('how_know_happened')}</p>
 
-					<RadioButtonGroup name="know-happened" defaultSelected="">
+					<RadioButtonGroup name="know-happened" defaultSelected="news" id="know-happened-option" name="know-happened-option" onChange={this.chooseKnowHap.bind(this)}>
 
 						<RadioButton
 							value="news"
@@ -164,12 +191,12 @@ export default class ReportForm extends TrackerReact(Component) {
 
 					</RadioButtonGroup>
 
-					<TextField hintText={TAPi18n.__('how_know_happened')} id="txtHappened" multiLine={true}
-      rows={2} fullWidth={true} />
+					<TextField hintText={TAPi18n.__('how_know_happened')} id="know-happened-text" multiLine={true}
+      rows={2} fullWidth={true} name="know-happened-text"/>
 
-					<TextField hintText={TAPi18n.__('zip_code')} id="txtAddress" />
+		<TextField hintText={TAPi18n.__('zip_code')} id="txtAddress" name="txtAddress" />
 
-					<TextField hintText={TAPi18n.__('phone_number_optional')} id="txtPhone" />
+					<TextField hintText={TAPi18n.__('phone_number_optional')} id="txtPhone" name="txtPhone" />
 
 					<RaisedButton type="submit" className="report-submit" label={TAPi18n.__('report_a_raid')} backgroundColor="rgb(121, 9, 9)" labelColor="#ffffff" style={style} />
 				</form>
