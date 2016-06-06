@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import Sidebar from 'react-sidebar';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import SidebarContent from '../components/SidebarContent';
