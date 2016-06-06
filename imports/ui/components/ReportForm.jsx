@@ -164,6 +164,9 @@ export default class ReportForm extends TrackerReact(Component) {
 
 					</RadioButtonGroup>
 
+					<TextField hintText={TAPi18n.__('how_know_happened')} id="txtHappened" multiLine={true}
+      rows={2} fullWidth={true} />
+
 					<TextField hintText={TAPi18n.__('zip_code')} id="txtAddress" />
 
 					<TextField hintText={TAPi18n.__('phone_number_optional')} id="txtPhone" />
