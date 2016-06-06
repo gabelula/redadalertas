@@ -107,9 +107,6 @@ export default class ReportForm extends TrackerReact(Component) {
 
 	render() {
 		var geoLocation = Geolocation.latLng();
-		console.log(geoLocation);
-
-		var self = this;
 
 		return (
 			<div>

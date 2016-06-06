@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { TAPi18n } from 'meteor/tap:i18n';
 import DropDownMenu from 'material-ui/DropDownMenu';
