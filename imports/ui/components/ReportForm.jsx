@@ -12,6 +12,8 @@ import { addRaid } from '../../api/raids/methods.js';
 import check from 'meteor/check';
 import { Geolocation } from 'meteor/mdg:geolocation';
 import { TAPi18n } from 'meteor/tap:i18n';
+import DatePicker from 'material-ui/DatePicker';
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 
 const style = {
   margin: 12,
@@ -26,7 +28,10 @@ const styles = {
   },
 	button: {
 		margin: 12
-	}
+	},
+  radioButton: {
+    marginBottom: 16,
+  }
 };
 
 const superGeo = Geolocation.latLng();
@@ -110,10 +115,58 @@ export default class ReportForm extends TrackerReact(Component) {
 
 		return (
 			<div>
+				<h1>{TAPi18n.__('report_a_raid')}</h1>
 				<form onSubmit={this.insertRaid}>
-					<TextField hintText={TAPi18n.__('describe_the_raid')} id="txtDescription" />
+					<DatePicker hintText={TAPi18n.__('date_raid_occurred')} />
+					<p>{TAPi18n.__('was_anybody_detained')}</p>
+					<RadioButtonGroup name="any-detained" defaultSelected="">
+
+		      <RadioButton
+		        value="yes"
+		        label={TAPi18n.__('yes')}
+		        style={styles.radioButton}
+		      />
+		      <RadioButton
+		        value="no"
+		        label={TAPi18n.__('no')}
+		        style={styles.radioButton}
+		      />
+					<RadioButton
+						value="unsure"
+						label={TAPi18n.__('unsure')}
+						style={styles.radioButton}
+					/>
+
+		    	</RadioButtonGroup>
+
+					<TextField hintText={TAPi18n.__('describe_the_raid')} id="txtDescription" multiLine={true}
+      rows={2} fullWidth={true} />
+
+					<p>{TAPi18n.__('how_know_happened')}</p>
+
+					<RadioButtonGroup name="know-happened" defaultSelected="">
+
+						<RadioButton
+							value="news"
+							label={TAPi18n.__('news_report')}
+							style={styles.radioButton}
+						/>
+						<RadioButton
+							value="first-hand"
+							label={TAPi18n.__('first_hand_account')}
+							style={styles.radioButton}
+						/>
+						<RadioButton
+							value="second-hand"
+							label={TAPi18n.__('heard_from_someone_else')}
+							style={styles.radioButton}
+						/>
+
+					</RadioButtonGroup>
 
 					<TextField hintText={TAPi18n.__('zip_code')} id="txtAddress" />
+
+					<TextField hintText={TAPi18n.__('phone_number_optional')} id="txtPhone" />
 
 					<RaisedButton type="submit" className="report-submit" label={TAPi18n.__('report_a_raid')} backgroundColor="rgb(121, 9, 9)" labelColor="#ffffff" style={style} />
 				</form>
