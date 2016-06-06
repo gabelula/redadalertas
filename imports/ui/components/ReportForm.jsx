@@ -3,6 +3,7 @@ import { mount } from 'react-mounter';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
+import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
@@ -31,7 +32,11 @@ const styles = {
 	},
   radioButton: {
     marginBottom: 16,
-  }
+  },
+	paper: {
+		padding: "15px",
+		marginTop: "10px"
+	}
 };
 
 const superGeo = Geolocation.latLng();
@@ -141,9 +146,10 @@ export default class ReportForm extends TrackerReact(Component) {
 
 		return (
 			<div>
+			<Paper style={styles.paper} zDepth={3} >
 				<h1>{TAPi18n.__('report_a_raid')}</h1>
 				<form onSubmit={this.insertRaid.bind(this)}>
-					<DatePicker hintText={TAPi18n.__('date_raid_occurred')} id="date-occurred" name="date-occurred" />
+					<DatePicker autoOk={true} hintText={TAPi18n.__('date_raid_occurred')} id="date-occurred" name="date-occurred" />
 
 					<p>{TAPi18n.__('was_anybody_detained')}</p>
 					<RadioButtonGroup name="any-detained" defaultSelected="unsure" id="any-detained" name="any-detained" onChange={this.chooseAnyDetained.bind(this)}>
@@ -201,7 +207,7 @@ export default class ReportForm extends TrackerReact(Component) {
 					<RaisedButton type="submit" className="report-submit" label={TAPi18n.__('report_a_raid')} backgroundColor="rgb(121, 9, 9)" labelColor="#ffffff" style={style} />
 				</form>
 
-
+			</Paper>
 			</div>
 		)
 	}
