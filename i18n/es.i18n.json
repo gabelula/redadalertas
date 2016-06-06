@@ -15,5 +15,6 @@
 	"news_report": "Salio en las noticias",
 	"first_hand_account": "Yo lo vi",
 	"heard_from_someone_else": "Lo escuche de alguien mas",
-	"phone_number_optional": "Numero de Telefono (opcional)"
+	"phone_number_optional": "Numero de Telefono (opcional)",
+	"form_success": "Gracias por reportar la redada!"
 }

@@ -15,5 +15,6 @@
 	"news_report": "News Report",
 	"first_hand_account": "First hand account",
 	"heard_from_someone_else": "Heard from someone else",
-	"phone_number_optional": "Phone Number (optional)"
+	"phone_number_optional": "Phone Number (optional)",
+	"form_success": "Succesfully submitted the raid. Thank You!"
 }

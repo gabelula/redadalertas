@@ -15,6 +15,7 @@ import { Geolocation } from 'meteor/mdg:geolocation';
 import { TAPi18n } from 'meteor/tap:i18n';
 import DatePicker from 'material-ui/DatePicker';
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+import Snackbar from 'material-ui/Snackbar';
 
 const style = {
   margin: 12,
@@ -46,13 +47,15 @@ export default class ReportForm extends TrackerReact(Component) {
 	constructor(props) {
 	    super(props);
 	    this.state = {
+				open: false,
 				subscription: {
 					raids: Meteor.subscribe('allRaids')
 				},
 				geolocation: Geolocation.latLng(),
 				useGeo: true,
 				anyDetained: 'unsure',
-				knowHappened: 'news'
+				knowHappened: 'news',
+				message: TAPi18n.__('form_success')
 	    };
 	}
 
@@ -60,6 +63,12 @@ export default class ReportForm extends TrackerReact(Component) {
 		var geoLocation = Geolocation.latLng();
 		this.setState({geoLocation: geoLocation});
 	}
+
+	handleRequestClose() {
+    this.setState({
+      open: false,
+    });
+  }
 
 	raids() {
 		return Raids.find().fetch();
@@ -116,9 +125,12 @@ export default class ReportForm extends TrackerReact(Component) {
 					// console.log('Submission was a success: ' + data);
 				});
 			} else {
-				alert("Request failed. Could not GeoCode the location based on your input. Try submitting a Zip Code");
+				//alert("Request failed. Could not GeoCode the location based on your input. Try submitting a Zip Code");
+				this.showSnackBar("Request failed. Could not GeoCode the location based on your input. Try submitting a Zip Code").bind(this);
 			}
 		});
+
+		this.setState( { open: true } );
 
 		// Clear values
 		document.getElementById("txtAddress").value = '';
@@ -127,6 +139,11 @@ export default class ReportForm extends TrackerReact(Component) {
 		document.getElementById("know-happened-text").value = '';
 		document.getElementById("txtPhone").value = '';
 
+	}
+
+	showSnackBar(message) {
+		this.setState( { message: message } );
+		this.setState( { open: true } );
 	}
 
 	componentWillUnmount() {
@@ -209,6 +226,12 @@ export default class ReportForm extends TrackerReact(Component) {
 				</form>
 
 			</Paper>
+			<Snackbar
+          open={this.state.open}
+          message={this.state.message}
+          autoHideDuration={4000}
+          onRequestClose={this.handleRequestClose.bind(this)}
+        />
 			</div>
 		)
 	}
