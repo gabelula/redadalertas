@@ -91,7 +91,7 @@ export default class Main extends TrackerReact(Component) {
       onSetOpen: this.onSetOpen.bind(this),
     };
 
-		var tags = [
+		const tags = [
       {name: "description", content: "Un mapa de las redadas que el partido Democrata patroniza."},
       {itemProp: "name", content: "Redadas De Obama"},
       {itemProp: "description", content: "Un mapa de las redadas que el partido Democrata y Obama patronizan."},
