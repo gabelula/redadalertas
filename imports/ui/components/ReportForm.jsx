@@ -90,6 +90,7 @@ export default class ReportForm extends TrackerReact(Component) {
 
 		const geocoder = new google.maps.Geocoder();
 
+		const self = this;
 
 		const dateOccurred = document.getElementById("date-occurred").value;
 		const anyDetained = this.state.anyDetained;
@@ -120,17 +121,22 @@ export default class ReportForm extends TrackerReact(Component) {
 					media: {}
 				}, (err) => {
 					if (err && err.error) {
+						self.setState( { message: err.error } );
+						self.setState( { open: true } );
 						return err.error;
 					}
 					// console.log('Submission was a success: ' + data);
+					self.setState( { open: true } );
 				});
 			} else {
+				self.setState( { message: 'Could not GeoCode the location based on your input. Try submitting a Zip Code' } );
 				//alert("Request failed. Could not GeoCode the location based on your input. Try submitting a Zip Code");
-				this.showSnackBar("Request failed. Could not GeoCode the location based on your input. Try submitting a Zip Code").bind(this);
+				//this.showSnackBar("Request failed. Could not GeoCode the location based on your input. Try submitting a Zip Code").bind(this);
+				self.setState( { open: true } );
 			}
 		});
 
-		this.setState( { open: true } );
+		//this.setState( { open: true } );
 
 		// Clear values
 		document.getElementById("txtAddress").value = '';
