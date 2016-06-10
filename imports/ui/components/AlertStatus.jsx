@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {mount} from 'react-mounter';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { Meteor } from 'meteor/meteor';
 
