@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {mount} from 'react-mounter';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import RaidMap from '../components/RaidMap.jsx';
 import ReportForm from '../components/ReportForm.jsx';
 import RaidList from '../components/RaidList.jsx';

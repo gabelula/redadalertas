@@ -1,35 +1,34 @@
 {
-    "name": "redadas-de-obama",
-    "version": "0.1.0",
-    "description": "A web app for crowdsourcing immigration raid info so undocumented people can avoid them.",
-    "main": "main.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "deploy": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy --settings settings.json www.redadasdeobama.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Cosecha/redadas-de-obama.git"
-    },
-    "author": "Celso Mireles",
-    "license": "SEE LICENSE IN LICENSE",
-    "bugs": {
-        "url": "https://github.com/Cosecha/redadas-de-obama/issues"
-    },
-    "homepage": "https://github.com/Cosecha/redadas-de-obama#readme",
-    "dependencies": {
-        "authy": "^1.2.0",
-        "material-ui": "^0.15.0",
-        "meteor-node-stubs": "^0.2.3",
-        "moment": "^2.13.0",
-        "react": "^15.0.2",
-        "react-dom": "^15.0.2",
-        "react-gmaps": "^1.5.0",
-        "react-mounter": "^1.2.0",
-        "react-redux": "^4.4.5",
-        "react-sidebar": "^2.1.1",
-        "react-tap-event-plugin": "^1.0.0",
-        "sms-address": "^1.0.0",
-        "twilio": "^2.9.1"
-    }
+  "name": "redadas-de-obama",
+  "version": "0.1.0",
+  "description": "A web app for crowdsourcing immigration raid info so undocumented people can avoid them.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy --settings settings.json www.redadasdeobama.com",
+    "meteor": "meteor --settings settings.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cosecha/redadas-de-obama.git"
+  },
+  "author": "Celso Mireles",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Cosecha/redadas-de-obama/issues"
+  },
+  "homepage": "https://github.com/Cosecha/redadas-de-obama#readme",
+  "dependencies": {
+    "material-ui": "^0.15.0",
+    "meteor-node-stubs": "^0.2.3",
+    "moment": "^2.13.0",
+    "react": "^15.1.0",
+    "react-doc-meta": "^0.2.0",
+    "react-dom": "^15.1.0",
+    "react-gmaps": "^1.5.0",
+    "react-mounter": "^1.2.0",
+    "react-sidebar": "^2.1.1",
+    "react-tap-event-plugin": "^1.0.0",
+    "sms-address": "^1.0.0"
+  }
 }
