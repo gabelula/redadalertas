@@ -28,7 +28,7 @@ export default class RaidList extends TrackerReact(Component){
 			<div>
 				<h1>{TAPi18n.__('Raids')}:</h1>
 
-				{this.raids().map((raid) => <RaidListItem description={raid.description} address={raid.address} created={raid.createdOn.valueOf()} key={raid._id} />)}
+				{this.raids().map((raid) => <RaidListItem raid={raid} created={raid.createdOn.valueOf()} key={raid._id} />)}
 
 
 

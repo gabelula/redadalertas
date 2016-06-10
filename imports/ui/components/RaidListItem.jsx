@@ -18,7 +18,6 @@ export default class RaidListItem extends TrackerReact(Component){
 
 	    this.state = {
 				subscription: {
-					raids: Meteor.subscribe('allRaids')
 				}
 	    };
 	}
@@ -30,9 +29,13 @@ export default class RaidListItem extends TrackerReact(Component){
 	render() {
 		return (
 			<div>
-				<h5>{this.props.address}</h5>
+				<h5>{this.props.raid.description} <span>({this.props.raid.verified ? 'Verified' : 'Not Verified' })</span></h5>
 				<p>{this.momentify(this.props.created)}</p>
-				<p>{this.props.description}</p>
+				<p>Date Ocurred: {this.props.raid.dateOcurred}</p>
+				<p>Any Detained: {this.props.raid.anyDetained}</p>
+				<p>{this.props.raid.address}</p>
+				<p>Source: {this.props.raid.knowHappened}</p>
+				<blockquote>{this.props.raid.knowHappenedText ? this.props.raid.knowHappenedText : ''}</blockquote>
 				<hr />
 			</div>
 

@@ -5,6 +5,7 @@ import { TAPi18n } from 'meteor/tap:i18n';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import moment from 'moment';
 
 var injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
@@ -17,7 +18,10 @@ const styles = {
 		'float': 'right'
 	},
 	option: {
-		'color': '#ffffff'
+		'backgroundColor': "#ffffff",
+		'padding': '0px 5px',
+		'position':'relative',
+		'top': '-8px'
 	}
 };
 
@@ -26,9 +30,15 @@ export default class LanguagePicker extends TrackerReact(Component) {
     super(props);
     this.state = {
 			value: 1,
-			lang: 'en'
+			lang: 'es'
 		};
   }
+
+	componentWillMount() {
+		// Make spanish the language
+		TAPi18n.setLanguage('es');
+		moment.locale("es-MX");
+	}
 
   handleChange(event, index, lang) {
 		this.setState({lang:lang});
@@ -46,7 +56,7 @@ export default class LanguagePicker extends TrackerReact(Component) {
   render() {
     return (
       <div style={styles.main}>
-        <SelectField value={this.state.lang} onChange={this.handleChange.bind(this)}>
+        <SelectField value={this.state.lang} style={styles.option} onChange={this.handleChange.bind(this)}>
           <MenuItem value='en' primaryText="English" />
           <MenuItem value='es' primaryText="Espanol" />
         </SelectField>
