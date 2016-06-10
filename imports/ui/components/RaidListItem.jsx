@@ -31,7 +31,7 @@ export default class RaidListItem extends TrackerReact(Component){
 			<div>
 				<h5>{this.props.raid.description} <span>({this.props.raid.verified ? 'Verified' : 'Not Verified' })</span></h5>
 				<p>{this.momentify(this.props.created)}</p>
-				<p>Date Ocurred: {this.props.raid.dateOcurred}</p>
+				<p>Date Ocurred: {this.props.raid.dateOccurred}</p>
 				<p>Any Detained: {this.props.raid.anyDetained}</p>
 				<p>{this.props.raid.address}</p>
 				<p>Source: {this.props.raid.knowHappened}</p>
