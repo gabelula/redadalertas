@@ -5,5 +5,16 @@
 	"Logout": "Logout",
 	"describe_the_raid": "Describe the Raid",
 	"zip_code": "Zip Code",
-	"report_a_raid": "Report a Raid"
+	"report_a_raid": "Report a Raid",
+	"date_raid_occurred": "Date the Raid Occurred",
+	"was_anybody_detained": "Was anybody detained?",
+	"yes": "Yes",
+	"no": "No",
+	"unsure": "Unsure",
+	"how_know_happened": "How do know this happened?",
+	"news_report": "News Report",
+	"first_hand_account": "First hand account",
+	"heard_from_someone_else": "Heard from someone else",
+	"phone_number_optional": "Phone Number (optional)",
+	"form_success": "Succesfully submitted the raid. Thank You!"
 }
