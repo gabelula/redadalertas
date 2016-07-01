@@ -7,7 +7,6 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import MaterialTitlePanel from '../components/MaterialTitlePanel.jsx';
 import { TAPi18n } from 'meteor/tap:i18n';
-import LanguagePicker from '../components/LanguagePicker';
 import DocMeta from 'react-doc-meta';
 
 
@@ -81,7 +80,7 @@ export default class Main extends TrackerReact(Component) {
 					 <i className="fa fa-bars"></i>
          </a>}
         <span style={styles.headerMenuLinkText}>{TAPi18n.__('obamas_raids')}</span>
-				<LanguagePicker />
+				
       </span>);
 
     const sidebarProps = {
