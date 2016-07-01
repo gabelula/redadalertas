@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Cosecha/redadas-de-obama#readme",
   "dependencies": {
+    "google-map-react": "^0.15.0",
     "material-ui": "^0.15.0",
     "meteor-node-stubs": "^0.2.3",
     "moment": "^2.13.0",
