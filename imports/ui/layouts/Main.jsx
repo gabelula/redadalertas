@@ -79,8 +79,8 @@ export default class Main extends TrackerReact(Component) {
          <a onClick={this.toggleOpen.bind(this)} href="#" style={styles.contentHeaderMenuLink}>
 					 <i className="fa fa-bars"></i>
          </a>}
-        <span style={styles.headerMenuLinkText}>{TAPi18n.__('obamas_raids')}</span>
-				
+        <span style={styles.headerMenuLinkText}>{TAPi18n.__('obamas_raids')} (Beta)</span>
+
       </span>);
 
     const sidebarProps = {
