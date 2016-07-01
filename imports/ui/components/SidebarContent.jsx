@@ -3,6 +3,7 @@ import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import MaterialTitlePanel from './MaterialTitlePanel';
 import { Meteor } from 'meteor/meteor';
 import { TAPi18n } from 'meteor/tap:i18n';
+import LanguagePicker from './LanguagePicker';
 
 const styles = {
   sidebar: {
@@ -56,6 +57,7 @@ export default class SidebarContent extends TrackerReact(Component) {
 		return (
 	    <MaterialTitlePanel title="Menu" style={styles.sidebar}>
 	      <div style={styles.content}>
+					<LanguagePicker />
 	        <a href="/" style={styles.sidebarLink}>{TAPi18n.__('Home')}</a>
 
 					<div style={styles.divider} />
