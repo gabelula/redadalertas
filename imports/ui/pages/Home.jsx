@@ -31,13 +31,6 @@ export default class Home extends TrackerReact(Component) {
 
 				<RaidMap />
 
-				{ Meteor.user() ?
-					<ReportForm />
-					:
-					<AccountsUIWrapper />
-				 }
-
-				<RaidList />
 
 			</div>
 		)

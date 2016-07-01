@@ -8,6 +8,8 @@ import Main from '../../ui/layouts/Main.jsx';
 import Home from '../../ui/pages/Home.jsx';
 import Alertas from '../../ui/pages/Alertas.jsx';
 import Login from '../../ui/pages/Login.jsx';
+import Reporta from '../../ui/pages/Reporta.jsx';
+import Verifica from '../../ui/pages/Verifica.jsx';
 
 Accounts.ui.config({
   passwordSignupFields: 'USERNAME_ONLY',
@@ -22,13 +24,29 @@ FlowRouter.route("/", {
     }
 });
 
-// FlowRouter.route("/alertas", {
-// 		name: 'alertas',
-// 		//triggersEnter: [AccountsTemplates.ensureSignedIn],
-//     action: function(params, queryParams) {
-//         mount(Main, {yield: <Alertas/>});
-//     }
-// });
+FlowRouter.route("/reporta", {
+		name: 'reporta',
+		//triggersEnter: [AccountsTemplates.ensureSignedIn],
+    action: function(params, queryParams) {
+        mount(Main, {yield: <Reporta/>});
+    }
+});
+
+FlowRouter.route("/verifica", {
+		name: 'verifica',
+		//triggersEnter: [AccountsTemplates.ensureSignedIn],
+    action: function(params, queryParams) {
+        mount(Main, {yield: <Verifica/>});
+    }
+});
+
+FlowRouter.route("/alertas", {
+		name: 'alertas',
+		//triggersEnter: [AccountsTemplates.ensureSignedIn],
+    action: function(params, queryParams) {
+        mount(Main, {yield: <Alertas/>});
+    }
+});
 
 // FlowRouter.route("/sign-in", {
 // 		name: 'login',

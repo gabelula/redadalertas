@@ -15,7 +15,8 @@ const styles = {
     width: 200,
   },
 	main: {
-		'float': 'right'
+		'float': 'right',
+		'width': '100%'
 	},
 	option: {
 		'backgroundColor': "#ffffff",
@@ -56,7 +57,7 @@ export default class LanguagePicker extends TrackerReact(Component) {
   render() {
     return (
       <div style={styles.main}>
-        <SelectField value={this.state.lang} style={styles.option} onChange={this.handleChange.bind(this)}>
+        <SelectField fullWidth={true} value={this.state.lang} style={styles.option} onChange={this.handleChange.bind(this)}>
           <MenuItem value='en' primaryText="English" />
           <MenuItem value='es' primaryText="Espanol" />
         </SelectField>
