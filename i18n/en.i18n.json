@@ -1,7 +1,11 @@
 {
 	"obamas_raids": "Obama's Raids",
+	"Map": "Map",
 	"Raids": "Raids",
 	"Home": "Home",
+	"Report": "Report",
+	"Verify": "Verify",
+	"Alerts": "Alerts",
 	"Logout": "Logout",
 	"describe_the_raid": "Describe the Raid",
 	"zip_code": "Zip Code",

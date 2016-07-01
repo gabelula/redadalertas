@@ -58,7 +58,13 @@ export default class SidebarContent extends TrackerReact(Component) {
 	    <MaterialTitlePanel title="Menu" style={styles.sidebar}>
 	      <div style={styles.content}>
 					<LanguagePicker />
-	        <a href="/" style={styles.sidebarLink}>{TAPi18n.__('Home')}</a>
+
+					<div style={styles.divider} />
+
+					<a href="/" style={styles.sidebarLink}>{TAPi18n.__('Map')}</a>
+	        <a href="/reporta" style={styles.sidebarLink}>{TAPi18n.__('Report')}</a>
+					<a href="/verifica" style={styles.sidebarLink}>{TAPi18n.__('Verify')}</a>
+					<a href="/alertas" style={styles.sidebarLink}>{TAPi18n.__('Alerts')}</a>
 
 					<div style={styles.divider} />
 					<a id="logout" href="" style={Meteor.user() ? styles.sidebarLinkLoggedIn : styles.sidebarLinkLoggedOut} onClick={this.callLogout}>{TAPi18n.__('Logout')}</a>

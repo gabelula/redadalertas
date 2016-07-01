@@ -1,7 +1,11 @@
 {
 	"obamas_raids": "Redadas de Obama",
+	"Map": "Mapa",
 	"Raids": "Redadas",
 	"Home": "Inicio",
+	"Report": "Reporta",
+	"Verify": "Verifica",
+	"Alerts": "Alertas",
 	"Logout": "Salir",
 	"describe_the_raid": "Describe la Redada",
 	"zip_code": "Codigo Postal",
