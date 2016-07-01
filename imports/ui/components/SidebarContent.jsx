@@ -39,6 +39,10 @@ const styles = {
     height: '100%',
     backgroundColor: 'white',
   },
+	help: {
+		marginTop: '10px',
+		fontWeight: 'bold'
+	}
 };
 
 export default class SidebarContent extends TrackerReact(Component) {
@@ -59,16 +63,25 @@ export default class SidebarContent extends TrackerReact(Component) {
 	      <div style={styles.content}>
 					<LanguagePicker />
 
-					<div style={styles.divider} />
+					<div style={styles.divider} ></div>
+
 
 					<a href="/" style={styles.sidebarLink}>{TAPi18n.__('Map')}</a>
 	        <a href="/reporta" style={styles.sidebarLink}>{TAPi18n.__('Report')}</a>
 					<a href="/verifica" style={styles.sidebarLink}>{TAPi18n.__('Verify')}</a>
 					<a href="/alertas" style={styles.sidebarLink}>{TAPi18n.__('Alerts')}</a>
 
-					<div style={styles.divider} />
-					<a id="logout" href="" style={Meteor.user() ? styles.sidebarLinkLoggedIn : styles.sidebarLinkLoggedOut} onClick={this.callLogout}>{TAPi18n.__('Logout')}</a>
-	      </div>
+					<div style={styles.divider} ></div>
+						<a id="logout" href="" style={Meteor.user() ? styles.sidebarLinkLoggedIn : styles.sidebarLinkLoggedOut} onClick={this.callLogout}>{TAPi18n.__('Logout')}</a>
+
+
+					<div style={styles.divider} ></div>
+					<div style={styles.help}>
+						<a href="https://github.com/Cosecha/redadas-de-obama" target="_blank" style={styles.sidebarLink}>{TAPi18n.__('Help-Develop')}</a>
+					</div>
+
+				</div>
+
 	    </MaterialTitlePanel>
 	  );
 	}
