@@ -40,12 +40,13 @@ const styles = {
 	}
 };
 
-const superGeo = Geolocation.latLng();
 
 export default class ReportForm extends TrackerReact(Component) {
 
 	constructor(props) {
 	    super(props);
+
+
 	    this.state = {
 				open: false,
 				subscription: {
@@ -86,7 +87,6 @@ export default class ReportForm extends TrackerReact(Component) {
 
 	insertRaid(e) {
 		e.preventDefault();
-		console.log(superGeo);
 
 		const geocoder = new google.maps.Geocoder();
 

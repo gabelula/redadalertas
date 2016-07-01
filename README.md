@@ -63,7 +63,7 @@ Now to make sure you have all you NPM dependencies (you may need to use `sudo` b
 
 Now to start the meteor app:
 
-`meteor`
+`npm run meteor`
 
 You should now be able to visit the app running on your computer at `http://localhost:3000`:
 
