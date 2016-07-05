@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import {mount} from 'react-mounter';
 import ReactDOM from 'react-dom';
 import { Mongo } from 'meteor/mongo';
@@ -7,12 +7,20 @@ import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { Meteor } from 'meteor/meteor';
 import {Raids} from '../../api/raids/raids.js';
 
+import GoogleMap from 'google-map-react';
+import MyGreatPlace from './MyGreatPlace.jsx';
+
 const googlemapskey = Meteor.settings.public.googlemapskey;
 
 const coords = {
   lat: 39.6630348,
   lng: -98.9540999
 };
+
+const mapContainer = {
+  width: '100%',
+  height: '400px'
+}
 
 export default class RaidMap extends TrackerReact(React.Component) {
 
@@ -21,7 +29,8 @@ export default class RaidMap extends TrackerReact(React.Component) {
 
 	    this.state = {
 				subscription: {
-					raids: Meteor.subscribe('allRaids')
+					raids: Meteor.subscribe('allRaids'),
+          center: [59.938043, 30.337157]
 				}
 	    };
 	}
@@ -65,23 +74,22 @@ export default class RaidMap extends TrackerReact(React.Component) {
 		}
 
 		return (
-			<Gmaps
-        width={'100%'}
-        height={'400px'}
-        lat={coords.lat}
-        lng={coords.lng}
-        zoom={4}
-        loadingMessage={this.errorImage()}
-        params={gmapParams}
-        onMapCreated={this.onMapCreated}>
+      <div style={mapContainer} >
+        <GoogleMap
+          apiKey={googlemapskey}
+          center={coords}
+          zoom={4}>
 
-					{this.raids().map((raid) => <Marker
-						lat={raid.geoLocation.lat}
-						lng={raid.geoLocation.lng}
-						draggable={false} key={raid._id}
-						animation={google.maps.Animation.DROP} />)}
+          <MyGreatPlace lat={33.4898} lng={-112.2616} text={'A'}  />
 
-      </Gmaps>
+          {this.raids().map((raid) => <MyGreatPlace
+            lat={raid.geoLocation.lat}
+            lng={raid.geoLocation.lng}
+            key={raid._id}
+            text={raid._id} />)}
+
+        </GoogleMap>
+      </div>
 		)
 	}
 }
