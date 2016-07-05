@@ -86,7 +86,7 @@ export default class RaidMap extends TrackerReact(React.Component) {
             lat={raid.geoLocation.lat}
             lng={raid.geoLocation.lng}
             key={raid._id}
-            text={raid._id} />)}
+            text={raid.address} />)}
 
         </GoogleMap>
       </div>

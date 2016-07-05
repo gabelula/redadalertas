@@ -16,7 +16,7 @@ const greatPlaceStyle = {
   position: 'absolute',
   width: K_WIDTH,
   height: K_HEIGHT,
-  left: -K_WIDTH / 2,
+  left: (-K_WIDTH / 2) - 150,
   top: -K_HEIGHT / 2,
 
   border: '5px solid #f44336',
