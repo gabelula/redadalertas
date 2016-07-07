@@ -7,8 +7,8 @@ import { Meteor } from 'meteor/meteor';
 import moment from 'moment';
 
 
-const K_WIDTH = 40;
-const K_HEIGHT = 40;
+const K_WIDTH = 10;
+const K_HEIGHT = 10;
 
 const greatPlaceStyle = {
   // initially any map object has left top corner at lat lng coordinates
@@ -16,17 +16,17 @@ const greatPlaceStyle = {
   position: 'absolute',
   width: K_WIDTH,
   height: K_HEIGHT,
-  left: (-K_WIDTH / 2) - 150,
+  left: (-K_WIDTH / 2) - 132,
   top: -K_HEIGHT / 2,
 
-  border: '5px solid #f44336',
-  borderRadius: K_HEIGHT,
-  backgroundColor: 'white',
+  border: 'none',
+  borderRadius: '50%',
+  backgroundColor: 'yellow',
   textAlign: 'center',
   color: '#3f51b5',
   fontSize: 16,
   fontWeight: 'bold',
-  padding: 4
+  padding: 0
 };
 
 
@@ -50,8 +50,8 @@ export default class MyGreatPlace extends TrackerReact(Component){
 
 	render() {
 		return (
-			<div style={greatPlaceStyle}>
-          {this.props.text}
+			<div style={greatPlaceStyle} text={this.props.text}>
+
        </div>
 		)
 	}
