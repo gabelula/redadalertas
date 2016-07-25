@@ -21,5 +21,7 @@
 	"heard_from_someone_else": "Heard from someone else",
 	"phone_number_optional": "Phone Number (optional)",
 	"form_success": "Succesfully submitted the raid. Thank You!",
-	"Help-Develop": "This is an Open Source project. Help us develop or translate."
+	"Help-Develop": "This is an Open Source project. Help us develop or translate.",
+	"submit_success": "Success! Thanks for submitting a raid. Now it will need to be verified.",
+	"submit_error_not_logged_in": "Please log in to submit raids"
 }

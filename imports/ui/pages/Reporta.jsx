@@ -52,8 +52,8 @@ export default class Reporta extends TrackerReact(Component) {
 				{ Meteor.user() ?
 					<ReportForm />
 					:
-					//<AccountsUIWrapper />
-          <ReportForm />
+					<AccountsUIWrapper />
+
 				 }
 
 

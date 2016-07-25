@@ -57,11 +57,15 @@ export default class ReportForm extends TrackerReact(Component) {
         dateOccurred: '',
         anyDetained: 'unsure',
         raidDescription: '',
-        knowHappened: '',
+        knowHappened: 'news',
         knowHappenedText: '',
         address: '',
         phone: '',
-				message: TAPi18n.__('form_success')
+				message: TAPi18n.__('form_success'),
+        geo: {
+          lat: 0,
+          lng: 0
+        }
 	    };
 	}
 
@@ -81,105 +85,97 @@ export default class ReportForm extends TrackerReact(Component) {
 	}
 
   chooseDateOccurred( e, value ) {
-    console.log(value);
-    this.setState({dateOccurred: value });
+    this.setState({dateOccurred: value.toString() });
   }
 
 	chooseAnyDetained(e,value) {
 		e.preventDefault();
-    console.log(value);
 		this.setState({ anyDetained: value });
 	}
 
   chooseRaidDescription( e, value ) {
     e.preventDefault();
-    console.log(value);
     this.setState({raidDescription: value });
   }
 
 	chooseKnowHap( e,value ) {
 		e.preventDefault();
-    console.log(value);
 		this.setState({ knowHappened: value });
 	}
 
   chooseKnowHapText( e,value ) {
 		e.preventDefault();
-    console.log(value);
 		this.setState({ knowHappenedText: value });
 	}
 
   chooseAddress( e,value ) {
     e.preventDefault();
-    console.log(value);
+    let geoData = Geolocation.currentLocation();
+    console.log(geoData);
+    this.setState({geo: {
+      lat: geoData.coords.latitude,
+      lng: geoData.coords.longitude
+    }})
     this.setState({ address: value });
   }
 
   choosePhone( e,value ) {
     e.preventDefault();
-    console.log(value);
     this.setState({ phone: value });
   }
 
 	insertRaid(e) {
 		e.preventDefault();
 
-		const geocoder = new google.maps.Geocoder();
-
 		const self = this;
 
-		const dateOccurred = document.getElementById("date-occurred").value;
-		const anyDetained = this.state.anyDetained;
-		const description = document.getElementById("txtDescription").value;
-		const knowHappened = this.state.knowHappened;
-		const knowHappenedText = document.getElementById("know-happened-text").value;
-		const address = document.getElementById("txtAddress").value;
-		const phone = document.getElementById("txtPhone").value;
+    const dateOccurred = this.state.dateOccurred;
+    const anyDetained = this.state.anyDetained;
+    const description = this.state.raidDescription;
+    const knowHappened = this.state.knowHappened;
+    const knowHappenedText = this.state.knowHappenedText;
+    const address = this.state.address;
+    const geo = this.state.geo;
+    const phone = this.state.phone;
 		const verified = false;
 
+    addRaid.call({
+      verified,
+      dateOccurred,
+      anyDetained,
+      knowHappened,
+      knowHappenedText,
+      address,
+      description,
+      phone,
+      createdOn: new Date(),
+      geoLocation: { lat: geo.lat, lng: geo.lng },
+      media: {}
+    }, (err) => {
+      if (err && err.error) {
+        self.setState( { message: err.reason } );
+        console.log(err);
+        self.setState( { open: true } );
+        return err.error;
+      }else{
+        self.setState( { message: TAPi18n.__('submit_success') });
+        self.setState( { open: true } );
+      }
+      // console.log('Submission was a success: ' + data);
 
-		geocoder.geocode({ 'address': address }, function (results, status) {
-			if (status == google.maps.GeocoderStatus.OK) {
-				const latitude = results[0].geometry.location.lat();
-				const longitude = results[0].geometry.location.lng();
-
-				addRaid.call({
-					verified,
-					dateOccurred,
-					anyDetained,
-					knowHappened,
-					knowHappenedText,
-					address,
-					description,
-					phone,
-					createdOn: new Date(),
-					geoLocation: { lat: latitude, lng: longitude },
-					media: {}
-				}, (err) => {
-					if (err && err.error) {
-						self.setState( { message: err.error } );
-						self.setState( { open: true } );
-						return err.error;
-					}
-					// console.log('Submission was a success: ' + data);
-					self.setState( { open: true } );
-				});
-			} else {
-				self.setState( { message: 'Could not GeoCode the location based on your input. Try submitting a Zip Code' } );
-				//alert("Request failed. Could not GeoCode the location based on your input. Try submitting a Zip Code");
-				//this.showSnackBar("Request failed. Could not GeoCode the location based on your input. Try submitting a Zip Code").bind(this);
-				self.setState( { open: true } );
-			}
-		});
+    });
 
 		//this.setState( { open: true } );
 
 		// Clear values
-		document.getElementById("txtAddress").value = '';
-		document.getElementById("txtDescription").value = '';
-		document.getElementById("date-occurred").value = '';
-		document.getElementById("know-happened-text").value = '';
-		document.getElementById("txtPhone").value = '';
+
+    this.setState({dateOccurred: ''});
+    this.setState({anyDetained:''});
+    this.setState({raidDescription:''});
+    this.setState({knowHappened:''});
+    this.setState({knowHappenedText:''});
+    this.setState({address:''});
+    this.setState({phone:''});
 
 	}
 
