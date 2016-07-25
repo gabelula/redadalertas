@@ -6,9 +6,9 @@ Accounts.onCreateUser(function (options, user) {
 	user.alerts.getsAlerts = false;
 	user.alerts.mobileCarrier = '';
 	user.alerts.mobileNumber = '';
-	if(user.services.facebook.email === 'celso.mireles@gmail.com'){
-		user.isAdmin = true;
-	}
+	// if(user.services.facebook.email === 'celso.mireles@gmail.com'){
+	// 	user.isAdmin = true;
+	// }
 	return user;
 });
 

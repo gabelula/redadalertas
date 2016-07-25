@@ -21,5 +21,7 @@
 	"heard_from_someone_else": "Lo escuche de alguien mas",
 	"phone_number_optional": "Numero de Telefono (opcional)",
 	"form_success": "Gracias por reportar la redada!",
-	"Help-Develop": "Este es un proyecto de fuente abierta. Ayudanos a desarollar o traducir."
+	"Help-Develop": "Este es un proyecto de fuente abierta. Ayudanos a desarollar o traducir.",
+	"submit_success": "Gracias! La redada que sometio ha sido registrada. Pero todavia falta verificarla.",
+	"submit_error_not_logged_in": "Necesita iniciar sesion para realizar esta operacion"
 }

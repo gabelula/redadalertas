@@ -53,6 +53,7 @@ export default class Reporta extends TrackerReact(Component) {
 					<ReportForm />
 					:
 					<AccountsUIWrapper />
+
 				 }
 
 
