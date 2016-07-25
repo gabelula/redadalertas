@@ -54,8 +54,13 @@ export default class ReportForm extends TrackerReact(Component) {
 				},
 				geolocation: Geolocation.latLng(),
 				useGeo: true,
-				anyDetained: 'unsure',
-				knowHappened: 'news',
+        dateOccurred: '',
+        anyDetained: 'unsure',
+        raidDescription: '',
+        knowHappened: '',
+        knowHappenedText: '',
+        address: '',
+        phone: '',
 				message: TAPi18n.__('form_success')
 	    };
 	}
@@ -75,15 +80,46 @@ export default class ReportForm extends TrackerReact(Component) {
 		return Raids.find().fetch();
 	}
 
+  chooseDateOccurred( e, value ) {
+    console.log(value);
+    this.setState({dateOccurred: value });
+  }
+
 	chooseAnyDetained(e,value) {
 		e.preventDefault();
+    console.log(value);
 		this.setState({ anyDetained: value });
 	}
 
+  chooseRaidDescription( e, value ) {
+    e.preventDefault();
+    console.log(value);
+    this.setState({raidDescription: value });
+  }
+
 	chooseKnowHap( e,value ) {
 		e.preventDefault();
+    console.log(value);
 		this.setState({ knowHappened: value });
 	}
+
+  chooseKnowHapText( e,value ) {
+		e.preventDefault();
+    console.log(value);
+		this.setState({ knowHappenedText: value });
+	}
+
+  chooseAddress( e,value ) {
+    e.preventDefault();
+    console.log(value);
+    this.setState({ address: value });
+  }
+
+  choosePhone( e,value ) {
+    e.preventDefault();
+    console.log(value);
+    this.setState({ phone: value });
+  }
 
 	insertRaid(e) {
 		e.preventDefault();
@@ -173,10 +209,16 @@ export default class ReportForm extends TrackerReact(Component) {
 			<Paper style={styles.paper} zDepth={3} >
 				<h1>{TAPi18n.__('report_a_raid')}</h1>
 				<form onSubmit={this.insertRaid.bind(this)}>
-					<DatePicker autoOk={true} hintText={TAPi18n.__('date_raid_occurred')} id="date-occurred" name="date-occurred" />
 
-					<p>{TAPi18n.__('was_anybody_detained')}</p>
-					<RadioButtonGroup name="any-detained" defaultSelected="unsure" id="any-detained" name="any-detained" onChange={this.chooseAnyDetained.bind(this)}>
+          {/* Question 1: Date */}
+          <p>1. <span>{TAPi18n.__('date_raid_occurred')}</span></p>
+
+					<DatePicker onChange={this.chooseDateOccurred.bind(this)} autoOk={true} hintText={TAPi18n.__('date_raid_occurred')} id="date-occurred" name="date-occurred" value={this.state.dateOccurred} />
+
+          {/* Question 2: Was Anyone Detained */}
+          <p>2. <span>{TAPi18n.__('was_anybody_detained')}</span></p>
+
+					<RadioButtonGroup name="any-detained" defaultSelected="unsure" id="any-detained" name="any-detained" onChange={this.chooseAnyDetained.bind(this)} value={this.state.anyDetained}>
 
 		      <RadioButton
 		        value="yes"
@@ -196,12 +238,24 @@ export default class ReportForm extends TrackerReact(Component) {
 
 		    	</RadioButtonGroup>
 
-					<TextField hintText={TAPi18n.__('describe_the_raid')} id="txtDescription" name="txtDescription" multiLine={true}
-      rows={2} fullWidth={true} />
+          {/* Question 3: Raid Description */}
+          <p>3. <span>{TAPi18n.__('describe_the_raid')}</span></p>
 
-					<p>{TAPi18n.__('how_know_happened')}</p>
+          <TextField
+            hintText={TAPi18n.__('describe_the_raid')}
+            id="txtDescription"
+            name="txtDescription"
+            multiLine={true}
+            rows={2}
+            fullWidth={true}
+            value={this.state.raidDescription}
+            onChange={this.chooseRaidDescription.bind(this)}
+          />
 
-					<RadioButtonGroup name="know-happened" defaultSelected="news" id="know-happened-option" name="know-happened-option" onChange={this.chooseKnowHap.bind(this)}>
+          {/* Question 4: How do you it happened */}
+          <p>4. <span>{TAPi18n.__('how_know_happened')}</span></p>
+
+					<RadioButtonGroup name="know-happened" defaultSelected="news" id="know-happened-option" name="know-happened-option" onChange={this.chooseKnowHap.bind(this)} value={this.state.knowHappened}>
 
 						<RadioButton
 							value="news"
@@ -221,13 +275,22 @@ export default class ReportForm extends TrackerReact(Component) {
 
 					</RadioButtonGroup>
 
+
+
 					<TextField hintText={TAPi18n.__('how_know_happened')} id="know-happened-text" multiLine={true}
-      rows={2} fullWidth={true} name="know-happened-text"/>
+      rows={2} fullWidth={true} name="know-happened-text" onChange={this.chooseKnowHapText.bind(this)} value={this.state.knowHappenedText}/>
 
-		<TextField hintText={TAPi18n.__('zip_code')} id="txtAddress" name="txtAddress" />
+          {/* Question 5: Location */}
+          <p>5. <span>{TAPi18n.__('zip_code')}</span></p>
 
-					<TextField hintText={TAPi18n.__('phone_number_optional')} id="txtPhone" name="txtPhone" />
+		      <TextField hintText={TAPi18n.__('zip_code')} id="txtAddress" name="txtAddress" onChange={this.chooseAddress.bind(this)} value={this.state.address}/>
 
+          {/* Question 6: Location */}
+          <p>6. <span>{TAPi18n.__('phone_number_optional')}</span></p>
+
+					<TextField hintText={TAPi18n.__('phone_number_optional')} id="txtPhone" name="txtPhone" onChange={this.choosePhone.bind(this)} value={this.state.phone} />
+
+          <br />
 					<RaisedButton type="submit" className="report-submit" label={TAPi18n.__('report_a_raid')} backgroundColor="rgb(121, 9, 9)" labelColor="#ffffff" style={style} />
 				</form>
 
