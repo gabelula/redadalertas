@@ -1,0 +1,21 @@
+{
+  "name": "redadas-de-obama",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "moment": "^2.14.1",
+    "normalize.css": "^4.2.0",
+    "react": "^15.3.1",
+    "react-addons-pure-render-mixin": "^15.3.1",
+    "react-addons-update": "^15.3.1",
+    "react-doc-meta": "^0.2.0",
+    "react-dom": "^15.3.1",
+    "react-gmaps": "^1.5.0",
+    "react-mounter": "^1.2.0",
+    "react-tap-event-plugin": "^1.0.0",
+    "react-toolbox": "^1.1.2"
+  }
+}
