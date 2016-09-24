@@ -74,4 +74,8 @@ You should now be able to visit the app running on your computer at `http://loca
 There are plenty of ways:
 - Join the [Cosecha Social Media Support Circle](https://www.facebook.com/groups/217068172002687) and be ready to share this with you friends once it's ready
 - Share this repo with your developer friends that might want to contribute.
-- [Donate to help with server and online infrastructure costs](https://actionnetwork.org/fundraising/donate-to-cosecha-online-infrastructure-costs)
+- [Donate to help with server and online infrastructure costs](https://www.gofundme.com/raid-alerts)
+
+## GoFundMe fundraising
+
+[Help support this project](https://www.gofundme.com/raid-alerts)
