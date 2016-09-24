@@ -3,6 +3,7 @@ import createSagaMiddleware from 'redux-saga';
 import createLogger from 'redux-logger';
 import { routerMiddleware, routerReducer } from 'react-router-redux';
 import recycleState from 'redux-recycle';
+import { reducer as appReducer } from './app';
 
 //import { reducer as appReducer } from './app';
 
@@ -10,7 +11,9 @@ import recycleState from 'redux-recycle';
 
 const reducer = combineReducers(
   {
-    routing: routerReducer,
+		app: appReducer,
+    routing: routerReducer
+
   }
 );
 
