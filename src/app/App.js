@@ -25,7 +25,7 @@ class App extends Component {
         return (
             <Layout>
                 <NavDrawer active={drawerActive}
-                    pinned={drawerPinned} permanentAt='xxxl'
+                    pinned={drawerPinned} permanentAt='xl'
                     onOverlayClick={ toggleDrawerActive }>
                     <AppSidebar />
                 </NavDrawer>

@@ -1,7 +1,6 @@
-# Redadas-de-obama
-A web app for crowdsourcing immigration raid info so undocumented people can avoid them. To be hosted on [www.RedadasDeObama.com](http://RedadasDeObama.com).
+# Redadalertas
+A web app for crowdsourcing immigration raid info so undocumented people can avoid them.
 
-![https://dl.dropboxusercontent.com/u/16972085/cosecha/160513-redadas-de-obama.jpg](https://dl.dropboxusercontent.com/u/16972085/cosecha/160513-redadas-de-obama.jpg)
 
 ![Home Page](https://dl.dropboxusercontent.com/u/16972085/cosecha/redadas-de-obama/Screen%20Shot%202016-06-03%20at%202.43.06%20PM.png)
 
@@ -17,15 +16,13 @@ Create a web app where people can do the following things:
 
 ## How we plan to do it
 
-This is gonna be a fast moving project. For that reason, we will be using the [Meteor.js](http://meteor.com) framework using React as the templating for front end.
-
-To make it a mobile application, we will be using Cordova.
+This project will be a Node.js application serving a React/Redux frontend. The plan is to deploy it to Heroku.
 
 ## Timeline
 
-- June 3, 2016: Launch Beta App
-- June 27, 2016: Public Launch
-- August 1, 2016: Launch iOS and Android Apps
+- April 2017: Launch Beta App
+- May 2017: Public Launch
+- November 2017: Launch iOS and Android Apps
 
 ## How to join the project
 
@@ -51,19 +48,19 @@ You need to have the following installed:
 
 Once you have that installed, run the following in your terminal:
 
-`git clone https://github.com/Cosecha/redadas-de-obama.git`
+`git clone https://github.com/Cosecha/redadalertas.git`
 
 Then move into that directory:
 
-`cd redadas-de-obama`
+`cd redadalertas`
 
 Now to make sure you have all you NPM dependencies (you may need to use `sudo` before):
 
-`npm init`
+`npm install`
 
-Now to start the meteor app:
+Now to start the app:
 
-`npm run meteor`
+`npm start`
 
 You should now be able to visit the app running on your computer at `http://localhost:3000`:
 
