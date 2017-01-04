@@ -8,7 +8,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
 import configureStore from './configureStore';
 
-import App from './app/App';
+import App from './app/App.js';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';

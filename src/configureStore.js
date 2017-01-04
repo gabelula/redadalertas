@@ -5,9 +5,7 @@ import { routerMiddleware, routerReducer } from 'react-router-redux';
 import recycleState from 'redux-recycle';
 import { reducer as appReducer } from './app';
 
-//import { reducer as appReducer } from './app';
-
-//import rootSaga from './rootSaga';
+import rootSaga from './rootSaga';
 
 const reducer = combineReducers(
   {
@@ -36,6 +34,6 @@ export default function configureStore(browserHistory, initialState) {
 			typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f
   ));
 
-  //sagaMiddleware.run(rootSaga);
+  sagaMiddleware.run(rootSaga);
   return store;
 }
