@@ -4,6 +4,7 @@ import { Layout, NavDrawer, Panel } from 'react-toolbox';
 import AppSidebar from '../shared-components/sidebar/AppSidebar';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import theme from './App.scss';
 import { toggleDrawerActive, toggleDrawerPinned } from './actions';
 
 
@@ -23,14 +24,14 @@ class App extends Component {
 				const { drawerActive, drawerPinned, toggleDrawerActive, toggleDrawerPinned } = this.props;
 
         return (
-            <Layout>
+            <Layout theme={theme}>
                 <NavDrawer active={drawerActive}
                     pinned={drawerPinned} permanentAt='xl'
-                    onOverlayClick={ toggleDrawerActive }>
+                    onOverlayClick={this.toggleDrawerActive}>
                     <AppSidebar />
                 </NavDrawer>
                 <Panel>
-                    <AppBar><IconButton icon='menu' inverse={ true } onClick={ toggleDrawerActive }/></AppBar>
+                    <AppBar><IconButton icon='menu' onClick={this.toggleDrawerActive} inverse /></AppBar>
                     <div style={{ flex: 1, overflowY: 'auto', padding: '1.8rem' }}>
                         <h1>Hello World</h1>
                         <p>Main content goes here.</p>
